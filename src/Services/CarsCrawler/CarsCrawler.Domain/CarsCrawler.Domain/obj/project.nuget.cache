@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kUb97nGR+j6/lsGPzTOj5e/Ac4R9WrQMjAsnWzRyWss/J7nqFQU0g9+GrI3fOoLLVgoZA1kt3EI4vw/wKHJZWQ==",
+  "dgSpecHash": "DpzwahcfqvYJvcYeRMH81q1iJtuJGMxZXh/BGiLOMFIl/0x05F50MATk9gx+O4or+zt57xPvR1vTkkvOCZxYhQ==",
   "success": true,
-  "projectFilePath": "/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj",
+  "projectFilePath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

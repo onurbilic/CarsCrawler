@@ -10,3 +10,15 @@
 /Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.dll
 /Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/ref/CarsCrawler.Domain.dll
 /Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.pdb
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\bin\Debug\net5.0\CarsCrawler.Domain.deps.json
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\bin\Debug\net5.0\CarsCrawler.Domain.dll
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\bin\Debug\net5.0\ref\CarsCrawler.Domain.dll
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\bin\Debug\net5.0\CarsCrawler.Domain.pdb
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.csproj.AssemblyReference.cache
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.AssemblyInfoInputs.cache
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.AssemblyInfo.cs
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.csproj.CoreCompileInputs.cache
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.dll
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\ref\CarsCrawler.Domain.dll
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.pdb

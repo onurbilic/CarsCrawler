@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "/rvWTkUOx/McEROTbyaBdSZyIDmQhmfv+3us833VL6OeBnUtG1RWa74vQK4M693yG6FxIktupAAF754aS5hflQ==",
+  "dgSpecHash": "hc0dbiJqHVMEPQx2VDX+27rvNLgMDuThnMzoddnvioo5SrZpWWYQnRCcix4HM4zhTMMVHoDWefi0RCm9UfuLcQ==",
   "success": true,
-  "projectFilePath": "/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "/Users/obilic/.nuget/packages/cefsharp.common.netcore/96.0.180/cefsharp.common.netcore.96.0.180.nupkg.sha512",
-    "/Users/obilic/.nuget/packages/cefsharp.offscreen.netcore/96.0.180/cefsharp.offscreen.netcore.96.0.180.nupkg.sha512",
-    "/Users/obilic/.nuget/packages/chromiumembeddedframework.runtime/96.0.18/chromiumembeddedframework.runtime.96.0.18.nupkg.sha512",
-    "/Users/obilic/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "/Users/obilic/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "/Users/obilic/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512"
+    "C:\\Users\\onurb\\.nuget\\packages\\cefsharp.common.netcore\\96.0.180\\cefsharp.common.netcore.96.0.180.nupkg.sha512",
+    "C:\\Users\\onurb\\.nuget\\packages\\cefsharp.offscreen.netcore\\96.0.180\\cefsharp.offscreen.netcore.96.0.180.nupkg.sha512",
+    "C:\\Users\\onurb\\.nuget\\packages\\chromiumembeddedframework.runtime\\96.0.18\\chromiumembeddedframework.runtime.96.0.18.nupkg.sha512",
+    "C:\\Users\\onurb\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\onurb\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\onurb\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

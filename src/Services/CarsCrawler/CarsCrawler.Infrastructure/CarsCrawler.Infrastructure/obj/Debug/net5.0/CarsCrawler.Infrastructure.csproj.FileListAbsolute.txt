@@ -10,3 +10,15 @@
 /Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.dll
 /Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/ref/CarsCrawler.Infrastructure.dll
 /Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.pdb
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\bin\Debug\net5.0\CarsCrawler.Infrastructure.deps.json
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\bin\Debug\net5.0\CarsCrawler.Infrastructure.dll
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\bin\Debug\net5.0\ref\CarsCrawler.Infrastructure.dll
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\bin\Debug\net5.0\CarsCrawler.Infrastructure.pdb
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.AssemblyInfo.cs
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.dll
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\ref\CarsCrawler.Infrastructure.dll
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.pdb
