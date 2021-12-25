@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="CefCrawler" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CefSharp.OffScreen.NETCore" Version="96.0.180" />
+    </ItemGroup>
+
+</Project>

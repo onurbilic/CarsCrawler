@@ -1,0 +1,12 @@
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/bin/Debug/net5.0/CarsCrawler.Domain.deps.json
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/bin/Debug/net5.0/CarsCrawler.Domain.dll
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/bin/Debug/net5.0/ref/CarsCrawler.Domain.dll
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/bin/Debug/net5.0/CarsCrawler.Domain.pdb
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.csproj.AssemblyReference.cache
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.AssemblyInfoInputs.cache
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.AssemblyInfo.cs
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.csproj.CoreCompileInputs.cache
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.dll
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/ref/CarsCrawler.Domain.dll
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/Debug/net5.0/CarsCrawler.Domain.pdb

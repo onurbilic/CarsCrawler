@@ -1,0 +1,12 @@
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.csproj.AssemblyReference.cache
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.AssemblyInfoInputs.cache
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.AssemblyInfo.cs
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/bin/Debug/net5.0/CarsCrawler.Infrastructure.deps.json
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/bin/Debug/net5.0/CarsCrawler.Infrastructure.dll
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/bin/Debug/net5.0/ref/CarsCrawler.Infrastructure.dll
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/bin/Debug/net5.0/CarsCrawler.Infrastructure.pdb
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.dll
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/ref/CarsCrawler.Infrastructure.dll
+/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/Debug/net5.0/CarsCrawler.Infrastructure.pdb
