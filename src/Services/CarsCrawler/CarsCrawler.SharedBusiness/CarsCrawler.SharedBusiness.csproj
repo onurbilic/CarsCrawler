@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarsCrawler.Domain\CarsCrawler.Domain\CarsCrawler.Domain.csproj" />
+    <ProjectReference Include="..\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

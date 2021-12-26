@@ -11,4 +11,8 @@
       <PackageReference Include="CefSharp.OffScreen.NETCore" Version="96.0.180" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\CarsCrawler.Domain\CarsCrawler.Domain\CarsCrawler.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

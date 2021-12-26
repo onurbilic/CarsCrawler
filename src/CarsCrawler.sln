@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsCrawler.Domain", "Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\CarsCrawler.Domain.csproj", "{25A4185E-3E22-45EB-9920-C27F316B4CFE}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsCrawler.Domain", "Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\CarsCrawler.Domain.csproj", "{25A4185E-3E22-45EB-9920-C27F316B4CFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsCrawler.Infrastructure", "Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure.csproj", "{D0CF009D-1884-461F-A83B-CB1355638ABE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsCrawler.Infrastructure", "Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure.csproj", "{D0CF009D-1884-461F-A83B-CB1355638ABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsCrawler.SharedBusiness", "Services\CarsCrawler\CarsCrawler.SharedBusiness\CarsCrawler.SharedBusiness.csproj", "{C5B0AA8D-9981-4240-8E6F-861E8B5C4E8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,15 @@ Global
 		{D0CF009D-1884-461F-A83B-CB1355638ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0CF009D-1884-461F-A83B-CB1355638ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0CF009D-1884-461F-A83B-CB1355638ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5B0AA8D-9981-4240-8E6F-861E8B5C4E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B0AA8D-9981-4240-8E6F-861E8B5C4E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B0AA8D-9981-4240-8E6F-861E8B5C4E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5B0AA8D-9981-4240-8E6F-861E8B5C4E8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59C1FED7-C8FF-4206-9E8E-541A6F61BCFD}
 	EndGlobalSection
 EndGlobal

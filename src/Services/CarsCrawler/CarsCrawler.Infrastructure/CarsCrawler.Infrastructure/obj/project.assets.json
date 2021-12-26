@@ -182,6 +182,16 @@
             "rid": "win"
           }
         }
+      },
+      "CarsCrawler.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/CarsCrawler.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarsCrawler.Domain.dll": {}
+        }
       }
     }
   },
@@ -515,10 +525,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CarsCrawler.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj",
+      "msbuildProject": "../../CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "CarsCrawler.Domain >= 1.0.0",
       "CefSharp.OffScreen.NETCore >= 96.0.180"
     ]
   },
@@ -548,7 +564,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj": {
+              "projectPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
