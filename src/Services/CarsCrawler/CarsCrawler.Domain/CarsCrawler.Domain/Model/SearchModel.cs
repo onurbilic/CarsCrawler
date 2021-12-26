@@ -1,6 +1,10 @@
-﻿namespace CarsCrawler.Domain.Model
+﻿using CarsCrawler.Domain.Extension;
+using CarsCrawler.Domain.SeedWork;
+
+namespace CarsCrawler.Domain.Model
 {
-    public class SearchModel
+    [BsonCollection("CarSearch")]
+    public class SearchModel : IDocument.Document
     {
         /// <summary>
         /// used or new car
