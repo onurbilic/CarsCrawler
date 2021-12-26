@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="CefCrawler" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="CefSharp.OffScreen.NETCore" Version="96.0.180" />
     </ItemGroup>
 
