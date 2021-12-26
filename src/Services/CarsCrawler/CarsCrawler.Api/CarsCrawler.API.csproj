@@ -11,4 +11,10 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CarsCrawler.Domain\CarsCrawler.Domain\CarsCrawler.Domain.csproj" />
+      <ProjectReference Include="..\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure.csproj" />
+      <ProjectReference Include="..\CarsCrawler.SharedBusiness\CarsCrawler.SharedBusiness.csproj" />
+    </ItemGroup>
+
 </Project>

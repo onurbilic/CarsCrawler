@@ -1,10 +1,10 @@
 namespace CarsCrawler.Domain.Model
 {
-    public record LoginModel
+    public class LoginModel
     {
         // It should be on appsettings but in the test case I want to use hard coded.
         //TODO : set value login info from appsettings.json
-        internal string UserName { get; init; } = "johngerson808@gmail.com";
-        internal string Password { get; init; } = "test8008";
+        public string UserName { get; set; } = "johngerson808@gmail.com";
+        public string Password { get; set; } = "test8008";
     }
 }
