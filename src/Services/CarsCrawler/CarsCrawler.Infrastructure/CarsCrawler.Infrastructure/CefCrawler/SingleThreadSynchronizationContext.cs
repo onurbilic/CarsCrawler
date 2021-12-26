@@ -4,17 +4,17 @@ namespace CarsCrawler.Infrastructure.CefCrawler
 {
     public sealed class SingleThreadSynchronizationContext : SynchronizationContext
     {
-        private readonly BlockingCollection<KeyValuePair<SendOrPostCallback, object>> queue =
-            new BlockingCollection<KeyValuePair<SendOrPostCallback, object>>();
+        private readonly BlockingCollection<KeyValuePair<SendOrPostCallback, object?>> _queue =
+            new BlockingCollection<KeyValuePair<SendOrPostCallback, object?>>();
 
-        public override void Post(SendOrPostCallback d, object state)
+        public override void Post(SendOrPostCallback d, object? state)
         {
-            queue.Add(new KeyValuePair<SendOrPostCallback, object>(d, state));
+            _queue.Add(new KeyValuePair<SendOrPostCallback, object?>(d, state));
         }
 
         public void RunOnCurrentThread()
         {
-            while (queue.TryTake(out var workItem, Timeout.Infinite))
+            while (_queue.TryTake(out var workItem, Timeout.Infinite))
             {
                 workItem.Key(workItem.Value);
             }
@@ -22,7 +22,7 @@ namespace CarsCrawler.Infrastructure.CefCrawler
 
         public void Complete()
         {
-            queue.CompleteAdding();
+            _queue.CompleteAdding();
         }
     }
 }
