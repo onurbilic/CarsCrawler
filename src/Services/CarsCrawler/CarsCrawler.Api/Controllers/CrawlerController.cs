@@ -2,6 +2,7 @@ using System.Net;
 using CarsCrawler.Domain.Model;
 using CarsCrawler.Infrastructure.Caching;
 using CarsCrawler.Infrastructure.Repositories.Mongo;
+using CarsCrawler.SharedBusiness.Commands;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
@@ -40,8 +41,11 @@ public class CrawlerController : ControllerBase
     [Route("search")]
     [ProducesResponseType((int) HttpStatusCode.NotFound)]
     [ProducesResponseType((int) HttpStatusCode.BadRequest)]
-    public IActionResult SearchCars(SearchModel searchModel)
+    public async Task SearchCars(SearchModel? searchModel)
     {
-        return Ok();
+        if (searchModel != null)
+        {
+            await _bus.Publish<ISearchCarsCommand>(searchModel);
+        }
     }
 }
