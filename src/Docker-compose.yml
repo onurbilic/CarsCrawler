@@ -37,12 +37,14 @@ services:
       - 'redis_data:/bitnami/redis/data'
         
   crawler-api:
-    image: ${REGISTRY:-CarsCrawler}/carscrawler.api:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${REGISTRY:-carscrawler}/carscrawler.api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
       dockerfile: Services/CarsCrawler/CarsCrawler.API/Dockerfile
     depends_on:
       - mongo
+    ports:
+      - '5010'
 
 volumes:
   redis_data:
