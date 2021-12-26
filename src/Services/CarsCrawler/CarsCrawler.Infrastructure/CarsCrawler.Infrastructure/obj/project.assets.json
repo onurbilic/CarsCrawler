@@ -319,6 +319,20 @@
           "lib/netstandard2.1/MongoDB.Bson.dll": {}
         }
       },
+      "MongoDB.Driver/2.14.1": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.14.1",
+          "MongoDB.Driver.Core": "2.14.1",
+          "MongoDB.Libmongocrypt": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Driver.dll": {}
+        }
+      },
       "MongoDB.Driver.Core/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -1296,6 +1310,25 @@
         "packageIcon.png"
       ]
     },
+    "MongoDB.Driver/2.14.1": {
+      "sha512": "vTFHpeQJF94316NPsR53hYPHogOi0l2O/gVYNmCcqpIKeL3xpNMLboPizlgHaJITxhIxZAWAxkx3Eem6prhO8w==",
+      "type": "package",
+      "path": "mongodb.driver/2.14.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/net472/MongoDB.Driver.dll",
+        "lib/net472/MongoDB.Driver.xml",
+        "lib/netstandard2.0/MongoDB.Driver.dll",
+        "lib/netstandard2.0/MongoDB.Driver.xml",
+        "lib/netstandard2.1/MongoDB.Driver.dll",
+        "lib/netstandard2.1/MongoDB.Driver.xml",
+        "mongodb.driver.2.14.1.nupkg.sha512",
+        "mongodb.driver.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "MongoDB.Driver.Core/2.14.1": {
       "sha512": "m8K0jxvyAezHO/Fyj+ooblMzkIE02qBXTqRWycIGC31tV5Y43mTuwTE6J07zyEo+sI1O25Ak8hwJAmFfKJ5low==",
       "type": "package",
@@ -2190,6 +2223,7 @@
       "MassTransit.RabbitMQ >= 7.3.0",
       "Microsoft.Extensions.Configuration >= 6.0.0",
       "MongoDB.Bson >= 2.14.1",
+      "MongoDB.Driver >= 2.14.1",
       "MongoDB.Driver.Core >= 2.14.1",
       "StackExchange.Redis >= 2.2.88"
     ]
@@ -2252,6 +2286,10 @@
             "version": "[6.0.0, )"
           },
           "MongoDB.Bson": {
+            "target": "Package",
+            "version": "[2.14.1, )"
+          },
+          "MongoDB.Driver": {
             "target": "Package",
             "version": "[2.14.1, )"
           },

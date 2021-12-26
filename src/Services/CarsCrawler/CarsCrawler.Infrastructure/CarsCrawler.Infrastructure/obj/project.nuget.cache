@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fnbqtd9UyUA45rPfqaFCLQTjMPCYMVesmiiGbQqTY1u62aLZjh45lRcvKreYGuHz9f9+TuH83COQxhYa+e0YRQ==",
+  "dgSpecHash": "ewxuTj11w1Pjb4S+S+7Ced0W0bAB1GspliQaOixmjG7DJ5rDhGtWEA5jWWJeWVXc9gKYOjI9Q61v4Pf5fvLHVQ==",
   "success": true,
   "projectFilePath": "/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "/Users/obilic/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/Users/obilic/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "/Users/obilic/.nuget/packages/mongodb.bson/2.14.1/mongodb.bson.2.14.1.nupkg.sha512",
+    "/Users/obilic/.nuget/packages/mongodb.driver/2.14.1/mongodb.driver.2.14.1.nupkg.sha512",
     "/Users/obilic/.nuget/packages/mongodb.driver.core/2.14.1/mongodb.driver.core.2.14.1.nupkg.sha512",
     "/Users/obilic/.nuget/packages/mongodb.libmongocrypt/1.3.0/mongodb.libmongocrypt.1.3.0.nupkg.sha512",
     "/Users/obilic/.nuget/packages/newid/3.0.3/newid.3.0.3.nupkg.sha512",
