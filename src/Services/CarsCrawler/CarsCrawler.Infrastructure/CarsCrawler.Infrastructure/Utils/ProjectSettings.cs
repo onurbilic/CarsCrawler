@@ -1,19 +1,25 @@
 namespace CarsCrawler.Infrastructure.Utils;
 
-public class ProjectSettings
+public class ProjectSetting
 {
-
+    public string Environment { get; set; }
+        
+    public RabbitMqSetting RabbitMqInfo { get; set; }
+    public ServiceSetting ListingService { get; set; }
+    public ServiceSetting MerchantService { get; set; }
 }
-public record RabbitMqSetting
-{
-    public RabbitMqSetting(string serverName, string userName, string password)
-    {
-        ServerName = serverName;
-        UserName = userName;
-        Password = password;
-    }
 
+public class RabbitMqSetting
+{
     public string ServerName { get; init; }
     public string UserName { get; set; }
     public string Password { get; set; }
+}
+
+public class ServiceSetting
+{
+    public string Url { get; set; }
+    public string Username { get; set; }
+    public string AppKey { get; set; }
+    public string Hash { get; set; }
 }

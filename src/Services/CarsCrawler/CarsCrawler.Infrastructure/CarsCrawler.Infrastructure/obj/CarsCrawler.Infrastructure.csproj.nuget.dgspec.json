@@ -110,11 +110,11 @@
             },
             "MassTransit": {
               "target": "Package",
-              "version": "[7.3.0, )"
+              "version": "[7.2.2, )"
             },
             "MassTransit.RabbitMQ": {
               "target": "Package",
-              "version": "[7.3.0, )"
+              "version": "[7.2.2, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",

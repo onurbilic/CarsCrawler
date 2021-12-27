@@ -9,18 +9,10 @@ public class BusConfigurator
     {
         return Bus.Factory.CreateUsingRabbitMq(factory =>
         {
-            factory.Host("cluster", "/", h =>
+            factory.Host(appSettings.ServerName, "/", h =>
             {
                 h.Username(appSettings.UserName);
                 h.Password(appSettings.Password);
-
-                var rabbitCluster = appSettings.ServerName.Split(";");
-
-                h.UseCluster(c =>
-                {
-                    foreach (var server in rabbitCluster)
-                        c.Node(server);
-                });
             });
         });
     }
