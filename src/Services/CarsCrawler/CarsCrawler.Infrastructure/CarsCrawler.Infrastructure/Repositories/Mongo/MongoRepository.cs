@@ -11,7 +11,7 @@ public class MongoRepository<TDocument> : IMongoRepository<TDocument>
     {
         private readonly IMongoCollection<TDocument> _collection;
 
-        public MongoRepository(MongoSettings.IMongoDbSettings settings)
+        public MongoRepository(IMongoDbSettings settings)
         {
             var database = new MongoClient(settings.ConnectionString).GetDatabase(settings.DatabaseName);
             _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
@@ -22,7 +22,7 @@ public class MongoRepository<TDocument> : IMongoRepository<TDocument>
             return ((BsonCollectionAttribute) documentType.GetCustomAttributes(
                     typeof(BsonCollectionAttribute),
                     true)
-                .FirstOrDefault()!)?.CollectionName;
+                .FirstOrDefault()!).CollectionName;
         }
 
         public virtual IQueryable<TDocument> AsQueryable()
