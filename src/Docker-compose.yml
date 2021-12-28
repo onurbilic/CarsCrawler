@@ -42,9 +42,17 @@ services:
       context: .
       dockerfile: Services/CarsCrawler/CarsCrawler.API/Dockerfile
     depends_on:
-      - mongo
+      - rabbitmq
     ports:
       - '5010:80'
+  
+  crawler-consumers:
+    image: ${REGISTRY:-carscrawler}/carscrawler.consumers:${PLATFORM:-windows}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Services/CarsCrawler/CarsCrawler.Consumers/Dockerfile
+    depends_on:
+      - crawler-api
 
 volumes:
   redis_data:

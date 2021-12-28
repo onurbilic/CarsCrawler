@@ -13,7 +13,7 @@ namespace CarsCrawler.Consumers.Consumer
     {
         public CarDetailConsumerDefinition()
         {
-            EndpointName = "In.Data.CarDetail";
+            EndpointName = "In.Carsdotcom.CarDetail";
         }
 
         protected override void ConfigureConsumer(IReceiveEndpointConfigurator endpointConfigurator,

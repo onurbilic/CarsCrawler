@@ -15,7 +15,7 @@ namespace CarsCrawler.SharedBusiness.Commands
         /// </summary>
         public int Makes { get; set; }
         /// <summary>
-        /// Brand model
+        /// Brand model     
         /// </summary>
         public int Models { get; set; }
         /// <summary>
