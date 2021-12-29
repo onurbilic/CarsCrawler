@@ -54,14 +54,14 @@ namespace CarsCrawler.Consumers.Consumer
                     }
 
                     _ = await browser.EvaluateScriptAsync(
-                        HtmlValueHelper.SetHtmlValue("stock_type", search.StockType,HtmlSelector.name));
+                        HtmlValueHelper.SetHtmlValue("stock_type", search.StockType, HtmlSelector.name));
                     await Task.Delay(100);
                     _ = await browser.EvaluateScriptAsync(
                         HtmlValueHelper.SetHtmlValue("makes", search.Makes, HtmlSelector.id));
                     await Task.Delay(1000);
                     _ = await browser.EvaluateScriptAsync(
-                        HtmlValueHelper.SetHtmlValue("models", search.Models, HtmlSelector.id));
-                    await Task.Delay(100);
+                        HtmlValueHelper.SetHtmlValue("models", search.Models, HtmlSelector.select));
+                    await Task.Delay(1000);
                     _ = await browser.EvaluateScriptAsync(
                         HtmlValueHelper.SetHtmlValue("list_price_max", search.Price, HtmlSelector.name));
                     await Task.Delay(100);
@@ -71,29 +71,46 @@ namespace CarsCrawler.Consumers.Consumer
                     _ = await browser.EvaluateScriptAsync(
                        HtmlValueHelper.SetHtmlValue("zip", search.Zip, HtmlSelector.name));
                     await Task.Delay(100);
+                    var response = await browser.EvaluateScriptAsync(
+                    HtmlValueHelper.SetHtmlValue("search-form", "", HtmlSelector.submitFormClassName));
+                    await Task.Delay(3000);
 
-                    // Wait for the screenshot to be taken.
-                    var bitmapAsByteArray = await browser.CaptureScreenshotAsync();
-
-                    // File path to save our screenshot e.g. C:\Users\{username}\Desktop\CefSharp screenshot.png
-                    var screenshotPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                        "CefSharp screenshot.png");
-
-                    Console.WriteLine();
-
-                    File.WriteAllBytes(screenshotPath, bitmapAsByteArray);
-
-                    Console.WriteLine("Screenshot saved. Launching your default image viewer...");
-
-                    // Tell Windows to launch the saved image.
-                    Process.Start(new ProcessStartInfo(screenshotPath)
+                    if (response.Success)
                     {
-                        // UseShellExecute is false by default on .NET Core.
-                        UseShellExecute = true
-                    });
 
-                    Console.WriteLine("Image viewer launched. Press any key to exit.");
+                        // Wait for the screenshot to be taken.
+                        var bitmapAsByteArray = await browser.CaptureScreenshotAsync();
+
+                        // File path to save our screenshot e.g. C:\Users\{username}\Desktop\CefSharp screenshot.png
+                        var screenshotPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                            "CefSharp screenshot.png");
+
+                        Console.WriteLine();
+
+                        File.WriteAllBytes(screenshotPath, bitmapAsByteArray);
+
+                        Console.WriteLine("Screenshot saved. Launching your default image viewer...");
+
+                        // Tell Windows to launch the saved image.
+                        Process.Start(new ProcessStartInfo(screenshotPath)
+                        {
+                            // UseShellExecute is false by default on .NET Core.
+                            UseShellExecute = true
+                        });
+
+                        await Task.Delay(5000);
+                        var vehicle_card = await browser.EvaluateScriptAsync(
+                            HtmlValueHelper.SetHtmlValue("vehicle-card",string.Empty,HtmlSelector.getVehicleCard));
+                        await Task.Delay(5000);
+
+                        Console.WriteLine(vehicle_card);
+
+
+                        Console.WriteLine("Image viewer launched. Press any key to exit.");
+                    }
                 }
+
+
 
                 // Wait for user to press a key before exit
                 Console.ReadKey();
