@@ -1,9 +1,14 @@
-version: '3.4'
+version: '3.9'
+
+networks:
+  carsnetwork:
+    external: true
 
 services:
   
   mongo:
     image: mongo
+    container_name: 'mongo'
     restart: always
     command: mongod --port 27018
     ports:
@@ -11,10 +16,13 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: 55financial
+    networks:
+      - carsnetwork
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
     container_name: 'rabbitmq'
+    hostname: rabbitmq
     ports:
       - 5672:5672
       - 15672:15672
@@ -24,9 +32,12 @@ services:
     volumes:
       - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
       - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+      - carsnetwork
         
   redis:
     image: docker.io/bitnami/redis:6.2
+    container_name: 'redis'
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
@@ -35,8 +46,12 @@ services:
       - '6379:6379'
     volumes:
       - 'redis_data:/bitnami/redis/data'
+    networks:
+      - carsnetwork
+
         
   crawler-api:
+    container_name: 'crawler-api'
     image: ${REGISTRY:-carscrawler}/carscrawler.api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
@@ -45,14 +60,20 @@ services:
       - rabbitmq
     ports:
       - '5010:80'
+    networks:
+      - carsnetwork
+
   
   crawler-consumers:
     image: ${REGISTRY:-carscrawler}/carscrawler.consumers:${PLATFORM:-windows}-${TAG:-latest}
+    container_name: 'crawler-consumer'
     build:
       context: .
       dockerfile: Services/CarsCrawler/CarsCrawler.Consumers/Dockerfile
     depends_on:
-      - crawler-api
+      - rabbitmq
+    networks:
+      - carsnetwork
 
 volumes:
   redis_data:

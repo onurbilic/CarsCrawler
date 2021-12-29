@@ -4,7 +4,9 @@ using CarsCrawler.Domain.SeedWork;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace CarsCrawler.Infrastructure.Repositories.Mongo;
+namespace CarsCrawler.Infrastructure.Repositories.Mongo
+{
+
 
 public class MongoRepository<TDocument> : IMongoRepository<TDocument>
         where TDocument : IDocument
@@ -146,3 +148,5 @@ public class MongoRepository<TDocument> : IMongoRepository<TDocument>
             return Task.Run(() => _collection.DeleteManyAsync(filterExpression));
         }
     }
+
+}

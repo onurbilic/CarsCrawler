@@ -1,12 +1,13 @@
 using System.Diagnostics;
 using CarsCrawler.Domain.Model;
-using CarsCrawler.Infrastructure.CefCrawler;
 using MassTransit;
 using MassTransit.ConsumeConfigurators;
 using MassTransit.Definition;
 using CarsCrawler.SharedBusiness.Commands;
 using CefSharp;
 using CefSharp.OffScreen;
+using CarsCrawler.Consumers.CefCrawler;
+using CarsCrawler.Infrastructure.Utils;
 
 namespace CarsCrawler.Consumers.Consumer
 {
@@ -15,13 +16,13 @@ namespace CarsCrawler.Consumers.Consumer
         public Task Consume(ConsumeContext<ISearchCarsCommand> context)
         {
             Console.WriteLine(context);
-            
-            GetScreenShot();
+
+            GetScreenShot(context.Message);
 
             return Task.CompletedTask;
         }
 
-        private void GetScreenShot()
+        private void GetScreenShot(ISearchCarsCommand search)
         {
             AsyncContext.Run(async delegate
             {
@@ -53,10 +54,24 @@ namespace CarsCrawler.Consumers.Consumer
                     }
 
                     _ = await browser.EvaluateScriptAsync(
-                        "document.querySelector('[name=q]').value = 'CefSharp Was Here!'");
+                        HtmlValueHelper.SetHtmlValue("stock_type", search.StockType,HtmlSelector.name));
+                    await Task.Delay(100);
+                    _ = await browser.EvaluateScriptAsync(
+                        HtmlValueHelper.SetHtmlValue("makes", search.Makes, HtmlSelector.id));
+                    await Task.Delay(1000);
+                    _ = await browser.EvaluateScriptAsync(
+                        HtmlValueHelper.SetHtmlValue("models", search.Models, HtmlSelector.id));
+                    await Task.Delay(100);
+                    _ = await browser.EvaluateScriptAsync(
+                        HtmlValueHelper.SetHtmlValue("list_price_max", search.Price, HtmlSelector.name));
+                    await Task.Delay(100);
+                    _ = await browser.EvaluateScriptAsync(
+                        HtmlValueHelper.SetHtmlValue("maximum_distance", search.Distance, HtmlSelector.name));
+                    await Task.Delay(100);
+                    _ = await browser.EvaluateScriptAsync(
+                       HtmlValueHelper.SetHtmlValue("zip", search.Zip, HtmlSelector.name));
+                    await Task.Delay(100);
 
-                    //Give the browser a little time to render
-                    await Task.Delay(500);
                     // Wait for the screenshot to be taken.
                     var bitmapAsByteArray = await browser.CaptureScreenshotAsync();
 
@@ -65,7 +80,6 @@ namespace CarsCrawler.Consumers.Consumer
                         "CefSharp screenshot.png");
 
                     Console.WriteLine();
-                    Console.WriteLine("Screenshot ready. Saving to {0}", screenshotPath);
 
                     File.WriteAllBytes(screenshotPath, bitmapAsByteArray);
 

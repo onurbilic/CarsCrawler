@@ -1,4 +1,4 @@
-﻿namespace CarsCrawler.Infrastructure.CefCrawler
+﻿namespace CarsCrawler.Consumers.CefCrawler
 {
     public static class AsyncContext
     {

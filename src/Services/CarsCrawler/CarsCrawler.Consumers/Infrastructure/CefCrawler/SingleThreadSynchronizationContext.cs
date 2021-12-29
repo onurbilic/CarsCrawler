@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace CarsCrawler.Infrastructure.CefCrawler
+namespace CarsCrawler.Consumers.CefCrawler
 {
     public sealed class SingleThreadSynchronizationContext : SynchronizationContext
     {

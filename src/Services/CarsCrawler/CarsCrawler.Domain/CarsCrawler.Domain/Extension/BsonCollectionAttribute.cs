@@ -1,14 +1,16 @@
 using System;
 
-namespace CarsCrawler.Domain.Extension;
-
-[AttributeUsage(AttributeTargets.Class, Inherited = false)]
-public class BsonCollectionAttribute : Attribute
+namespace CarsCrawler.Domain.Extension
 {
-    public string CollectionName { get; }
 
-    public BsonCollectionAttribute(string collectionName)
+    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+    public class BsonCollectionAttribute : Attribute
     {
-        CollectionName = collectionName;
+        public string CollectionName { get; }
+
+        public BsonCollectionAttribute(string collectionName)
+        {
+            CollectionName = collectionName;
+        }
     }
 }

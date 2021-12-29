@@ -1,20 +1,22 @@
 using CarsCrawler.Infrastructure.Utils;
 using MassTransit;
 
-namespace CarsCrawler.Infrastructure.RabbitMq;
-
-public class BusConfigurator
+namespace CarsCrawler.Infrastructure.RabbitMq
 {
-    public static IBusControl Create(RabbitMqSetting appSettings)
+    public class BusConfigurator
     {
-        return Bus.Factory.CreateUsingRabbitMq(factory =>
+        public static IBusControl Create(RabbitMqSetting appSettings)
         {
-            factory.Host(appSettings.ServerName, "/", h =>
+            return Bus.Factory.CreateUsingRabbitMq(factory =>
             {
-                h.Username(appSettings.UserName);
-                h.Password(appSettings.Password);
+                factory.Host(appSettings.ServerName, "/", h =>
+                {
+                    h.Username(appSettings.UserName);
+                    h.Password(appSettings.Password);
+                });
             });
-        });
-    }
+        }
 
+    }
 }
+
