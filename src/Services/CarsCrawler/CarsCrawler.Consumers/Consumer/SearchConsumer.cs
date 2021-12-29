@@ -8,21 +8,30 @@ using CefSharp;
 using CefSharp.OffScreen;
 using CarsCrawler.Consumers.CefCrawler;
 using CarsCrawler.Infrastructure.Utils;
+using CarsCrawler.Infrastructure.Repositories.Mongo;
+using System.Collections;
 
 namespace CarsCrawler.Consumers.Consumer
 {
     public class SearchConsumer : IConsumer<ISearchCarsCommand>
     {
+        private readonly IMongoRepository<Vehicle> _mongo;
+
+        //public SearchConsumer(IMongoRepository<Vehicle> mongo)
+        //{
+        //    _mongo = mongo;
+        //}
+
         public Task Consume(ConsumeContext<ISearchCarsCommand> context)
         {
             Console.WriteLine(context);
 
-            GetScreenShot(context.Message);
+            SearchResult(context.Message);
 
             return Task.CompletedTask;
         }
 
-        private void GetScreenShot(ISearchCarsCommand search)
+        private void SearchResult(ISearchCarsCommand search)
         {
             AsyncContext.Run(async delegate
             {
@@ -30,10 +39,9 @@ namespace CarsCrawler.Consumers.Consumer
                 {
                     //By default CefSharp will use an in-memory cache, you need to specify a Cache Folder to persist data
                     CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "CefSharp\\Cache")
+                        "CefSharp\\Cache1")
                 };
 
-                //Perform dependency check to make sure all relevant resources are in our output directory.
                 var success =
                     await Cef.InitializeAsync(settings, performDependencyCheck: true, browserProcessHandler: null);
 
@@ -42,7 +50,6 @@ namespace CarsCrawler.Consumers.Consumer
                     throw new Exception("Unable to initialize CEF, check the log file.");
                 }
 
-                // Create the CefSharp.OffScreen.ChromiumWebBrowser instance
                 using (var browser = new ChromiumWebBrowser(Consts.testUrl))
                 {
                     var initialLoadResponse = await browser.WaitForInitialLoadAsync();
@@ -77,36 +84,20 @@ namespace CarsCrawler.Consumers.Consumer
 
                     if (response.Success)
                     {
-
-                        // Wait for the screenshot to be taken.
-                        var bitmapAsByteArray = await browser.CaptureScreenshotAsync();
-
-                        // File path to save our screenshot e.g. C:\Users\{username}\Desktop\CefSharp screenshot.png
-                        var screenshotPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                            "CefSharp screenshot.png");
-
-                        Console.WriteLine();
-
-                        File.WriteAllBytes(screenshotPath, bitmapAsByteArray);
-
-                        Console.WriteLine("Screenshot saved. Launching your default image viewer...");
-
-                        // Tell Windows to launch the saved image.
-                        Process.Start(new ProcessStartInfo(screenshotPath)
-                        {
-                            // UseShellExecute is false by default on .NET Core.
-                            UseShellExecute = true
-                        });
-
                         await Task.Delay(5000);
+
                         var vehicle_card = await browser.EvaluateScriptAsync(
-                            HtmlValueHelper.SetHtmlValue("vehicle-card",string.Empty,HtmlSelector.getVehicleCard));
-                        await Task.Delay(5000);
+                            HtmlValueHelper.SetHtmlValue("vehicle-card", string.Empty, HtmlSelector.getVehicleCard));
 
                         Console.WriteLine(vehicle_card);
 
+                        foreach (dynamic item in vehicle_card.Result as IEnumerable)
+                        {
+                            Console.WriteLine(item.title);
+                        }
 
-                        Console.WriteLine("Image viewer launched. Press any key to exit.");
+
+
                     }
                 }
 
@@ -121,7 +112,6 @@ namespace CarsCrawler.Consumers.Consumer
             });
         }
     }
-
 
     public class SearchConsumerDefinition : ConsumerDefinition<SearchConsumer>
     {

@@ -51,8 +51,8 @@ namespace CarsCrawler.Consumers
 
                                 cfg.ConfigureEndpoints(context);
                             });
-                        });                            
-                        
+                        });
+
                         services.AddMassTransitHostedService();
 
                     }

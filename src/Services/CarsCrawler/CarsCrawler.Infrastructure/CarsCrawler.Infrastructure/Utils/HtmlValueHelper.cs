@@ -16,29 +16,40 @@
             switch (selector)
             {
                 case HtmlSelector.name:
-                    return String.Format("document.querySelector('[name={0}]').value = '{1}'", key, value);
+                    return string.Format("document.querySelector('[name={0}]').value = '{1}'", key, value);
                 case HtmlSelector.id:
-                    return String.Format("document.querySelector('[id={0}]').value = '{1}';", key, value);
+                    return string.Format("document.querySelector('[id={0}]').value = '{1}';", key, value);
                 case HtmlSelector.select:
-                    var js = String.Format(@"
+                    var js = string.Format(@"
                         document.getElementById('{0}').selectedIndex = 0
                         document.getElementById('{0}').options[0].text = 'Model S'
                         document.getElementById('{0}').options[0].value = '{1}'", key, value);
                     return js;
                 case HtmlSelector.submitFormClassName:
-                    return String.Format("document.getElementsByClassName('{0}')[0].submit();", key);
+                    return string.Format("document.getElementsByClassName('{0}')[0].submit();", key);
                 case HtmlSelector.getVehicleCard:
-                    var ve = String.Format(@"
-                                            var vehicleArray = [];
-                                            document.getElementsByClassName('{0}').forEach(function(vehicle) {
-                                            if (vehicle.id)
-                                                {
-                                                    vehicleArray.push(vehicle.id);
-                                                    console.log(vehicle.id);
-                                                }
-                                        });
-                                        vehicleArray;
-                                        ", key);
+                    var ve = @"(function()
+                                {
+                                    var vehicleArray = []; 
+  
+                                    document.getElementsByClassName('vehicle-card').forEach(function(vehicle) 
+                                    { 
+                                            const car = {};
+                                            car.id = vehicle.id;
+                                            car.title = vehicle.getElementsByClassName('title')[0].innerHTML
+                                            car.image = vehicle.getElementsByClassName('vehicle-image')[0].src;
+                                            car.stockType = vehicle.getElementsByClassName('stock-type')[0].innerHTML;
+                                            car.miles = vehicle.getElementsByClassName('mileage')[0].innerHTML;
+                                            car.price = vehicle.getElementsByClassName('primary-price')[0].innerHTML;
+                                            car.reportLink = vehicle.getElementsByClassName('sds-link--ext')[0].href;
+                                            car.dealerName = vehicle.getElementsByClassName('dealer-name')[0].innerHTML;
+                                            car.rating = vehicle.getElementsByClassName('sds-rating__count')[0].innerHTML;
+                                            vehicleArray.push(car); 
+                                    });  
+
+                                    return vehicleArray;
+
+                                })();";
                     return ve;
 
                 default:
