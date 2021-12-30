@@ -12,7 +12,7 @@
           "CefSharp.OffScreen.NETCore": "96.0.180",
           "MassTransit": "7.2.2",
           "MassTransit.RabbitMQ": "7.2.2",
-          "Microsoft.Extensions.Configuration": "6.0.0",
+          "Microsoft.Extensions.Configuration": "5.0.0",
           "MongoDB.Bson": "2.14.1",
           "MongoDB.Driver": "2.14.1",
           "MongoDB.Driver.Core": "2.14.1",
@@ -42,13 +42,13 @@
             "rid": "win-arm64",
             "assetType": "runtime",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.Core.dll": {
             "rid": "win-arm64",
             "assetType": "runtime",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.dll": {
             "rid": "win-arm64",
@@ -59,19 +59,19 @@
           "runtimes/win-arm64/lib/netcoreapp3.1/Ijwhost.dll": {
             "rid": "win-arm64",
             "assetType": "runtime",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "3.100.2121.52201"
           },
           "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.Core.Runtime.dll": {
             "rid": "win-x64",
             "assetType": "runtime",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.Core.dll": {
             "rid": "win-x64",
             "assetType": "runtime",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.dll": {
             "rid": "win-x64",
@@ -82,19 +82,19 @@
           "runtimes/win-x64/lib/netcoreapp3.1/Ijwhost.dll": {
             "rid": "win-x64",
             "assetType": "runtime",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "3.100.2121.52201"
           },
           "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.Core.Runtime.dll": {
             "rid": "win-x86",
             "assetType": "runtime",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.Core.dll": {
             "rid": "win-x86",
             "assetType": "runtime",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.dll": {
             "rid": "win-x86",
@@ -105,13 +105,13 @@
           "runtimes/win-x86/lib/netcoreapp3.1/Ijwhost.dll": {
             "rid": "win-x86",
             "assetType": "runtime",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "3.100.2121.52201"
           },
           "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.Core.dll": {
             "rid": "win-arm64",
             "assetType": "native",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.dll": {
             "rid": "win-arm64",
@@ -122,7 +122,7 @@
           "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.exe": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.runtimeconfig.json": {
             "rid": "win-arm64",
@@ -133,7 +133,7 @@
             "rid": "win-x64",
             "assetType": "native",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-x64/native/CefSharp.BrowserSubprocess.dll": {
             "rid": "win-x64",
@@ -144,7 +144,7 @@
           "runtimes/win-x64/native/CefSharp.BrowserSubprocess.exe": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-x64/native/CefSharp.BrowserSubprocess.runtimeconfig.json": {
             "rid": "win-x64",
@@ -155,7 +155,7 @@
             "rid": "win-x86",
             "assetType": "native",
             "assemblyVersion": "96.0.180.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-x86/native/CefSharp.BrowserSubprocess.dll": {
             "rid": "win-x86",
@@ -166,7 +166,7 @@
           "runtimes/win-x86/native/CefSharp.BrowserSubprocess.exe": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "96.0.180.0"
           },
           "runtimes/win-x86/native/CefSharp.BrowserSubprocess.runtimeconfig.json": {
             "rid": "win-x86",
@@ -252,26 +252,26 @@
           }
         }
       },
-      "Microsoft.Extensions.Configuration/6.0.0": {
+      "Microsoft.Extensions.Configuration/5.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Primitives": "6.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Primitives": "5.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
-      "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
+      "Microsoft.Extensions.Configuration.Abstractions/5.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "6.0.0"
+          "Microsoft.Extensions.Primitives": "5.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
@@ -283,14 +283,11 @@
           }
         }
       },
-      "Microsoft.Extensions.Primitives/6.0.0": {
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
+      "Microsoft.Extensions.Primitives/5.0.0": {
         "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+          "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
@@ -330,7 +327,7 @@
       },
       "MongoDB.Bson/2.14.1": {
         "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
         },
         "runtime": {
           "lib/netstandard2.1/MongoDB.Bson.dll": {
@@ -395,12 +392,12 @@
           "runtimes/win/native/snappy32.dll": {
             "rid": "win",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.1.1.7"
           },
           "runtimes/win/native/snappy64.dll": {
             "rid": "win",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.1.1.7"
           }
         }
       },
@@ -946,14 +943,7 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "runtime": {
-          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
-          }
-        }
-      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -1298,21 +1288,21 @@
     "CefSharp.Common.NETCore/96.0.180": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Pcb7mCSdOYjszO1Q4uDPAcS7HLZWo4O9Tvh2kFUlao33ZFrh1dKhf/j2SW+m+fhvbzTD3mJklQw2wLZqt8goEA==",
+      "sha512": "sha512-6/TsxgctyzjJ5rBi9+5HQ7rNQLX7YrOjNVgK+3db2m3QTbxFU0p+La9vnvt1Gq0YnzoQuAURaaRwKoMLAv1sow==",
       "path": "cefsharp.common.netcore/96.0.180",
       "hashPath": "cefsharp.common.netcore.96.0.180.nupkg.sha512"
     },
     "CefSharp.OffScreen.NETCore/96.0.180": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eF6/hIIkKmZei10U1TTv1c3J2BWntkKUirvXxj56RQCWruT75K3AIMidz99GhKwj1NOKmbN2Upw0Qoi29lcPTA==",
+      "sha512": "sha512-W/uVEDxSecMV/ajiugrOWwwzX+AjMneFWoHCHfInyseH5PdlysRvOaIsZDXtVijergzvb5xXGj/WGALMZu8bcQ==",
       "path": "cefsharp.offscreen.netcore/96.0.180",
       "hashPath": "cefsharp.offscreen.netcore.96.0.180.nupkg.sha512"
     },
     "chromiumembeddedframework.runtime/96.0.18": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SNEb7aDsZBLYN+E07rhvAxXsqwRrr7IGimdAUU+suiBw2ehYM3/Gqr1w0zoRI7yAlsy+nY9x4x50yx0UXgO/5w==",
+      "sha512": "sha512-hC0kQ3QkMjQZtTfmc/smxDwHjvHXgNiX7Y/s1PCXvOtsNZjaAuQYUVdkRfL2rxQFYXb0o0aqE5bQ+9pidGkg0Q==",
       "path": "chromiumembeddedframework.runtime/96.0.18",
       "hashPath": "chromiumembeddedframework.runtime.96.0.18.nupkg.sha512"
     },
@@ -1351,19 +1341,19 @@
       "path": "microsoft.bcl.asyncinterfaces/1.1.1",
       "hashPath": "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration/6.0.0": {
+    "Microsoft.Extensions.Configuration/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tq2wXyh3fL17EMF2bXgRhU7JrbO3on93MRKYxzz4JzzvuGSA1l0W3GI9/tl8EO89TH+KWEymP7bcFway6z9fXg==",
-      "path": "microsoft.extensions.configuration/6.0.0",
-      "hashPath": "microsoft.extensions.configuration.6.0.0.nupkg.sha512"
+      "sha512": "sha512-LN322qEKHjuVEhhXueTUe7RNePooZmS8aGid5aK2woX3NPjSnONFyKUc6+JknOS6ce6h2tCLfKPTBXE3mN/6Ag==",
+      "path": "microsoft.extensions.configuration/5.0.0",
+      "hashPath": "microsoft.extensions.configuration.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
+    "Microsoft.Extensions.Configuration.Abstractions/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qWzV9o+ZRWq+pGm+1dF+R7qTgTYoXvbyowRoBxQJGfqTpqDun2eteerjRQhq5PQ/14S+lqto3Ft4gYaRyl4rdQ==",
-      "path": "microsoft.extensions.configuration.abstractions/6.0.0",
-      "hashPath": "microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512"
+      "sha512": "sha512-ETjSBHMp3OAZ4HxGQYpwyGsD8Sw5FegQXphi0rpoGMT74S4+I2mm7XJEswwn59XAaKOzC15oDSOWEE8SzDCd6Q==",
+      "path": "microsoft.extensions.configuration.abstractions/5.0.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/2.1.1": {
       "type": "package",
@@ -1372,12 +1362,12 @@
       "path": "microsoft.extensions.logging.abstractions/2.1.1",
       "hashPath": "microsoft.extensions.logging.abstractions.2.1.1.nupkg.sha512"
     },
-    "Microsoft.Extensions.Primitives/6.0.0": {
+    "Microsoft.Extensions.Primitives/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9+PnzmQFfEFNR9J2aDTfJGGupShHjOuGw4VUv+JB044biSHrnmCIMD+mJHmb2H7YryrfBEXDurxQ47gJZdCKNQ==",
-      "path": "microsoft.extensions.primitives/6.0.0",
-      "hashPath": "microsoft.extensions.primitives.6.0.0.nupkg.sha512"
+      "sha512": "sha512-cI/VWn9G1fghXrNDagX9nYaaB/nokkZn0HYAawGaELQrl8InSezfe9OnfPZLcJq3esXxygh3hkq2c3qoV3SDyQ==",
+      "path": "microsoft.extensions.primitives/5.0.0",
+      "hashPath": "microsoft.extensions.primitives.5.0.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "type": "package",
@@ -1869,12 +1859,12 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
-      "path": "system.runtime.compilerservices.unsafe/6.0.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+      "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",

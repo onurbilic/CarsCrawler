@@ -108,6 +108,8 @@ namespace CarsCrawler.Consumers.Consumer
                             };
                             vehicles.Add(vehicle);
                         }
+
+                        _mongo.InsertMany(vehicles);
                     }
                 }
 

@@ -14,7 +14,7 @@ namespace CarsCrawler.API.Controllers
     [ApiController]
     public class CrawlerController : ControllerBase
     {
-        private readonly IMongoRepository<SearchModel> _carSearchRepository;
+        private readonly IMongoRepository<Vehicle> _vehicleRepository;
 
         private readonly IConfiguration _configuration;
 
@@ -22,11 +22,11 @@ namespace CarsCrawler.API.Controllers
         private readonly IBus _bus;
 
         public CrawlerController(
-            IMongoRepository<SearchModel> carSearchRepository,
+            IMongoRepository<Vehicle> vehicleRepository,
             IConfiguration configuration,
             IBus bus)
         {
-            _carSearchRepository = carSearchRepository;
+            _vehicleRepository = vehicleRepository;
             _configuration = configuration;
             // _cacheService = cacheService;
             _bus = bus;
@@ -74,19 +74,7 @@ namespace CarsCrawler.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public IActionResult Get()
         {
-            return Ok();
+            return Ok(_vehicleRepository.AsQueryable().ToList());
         }
-        //public HealthResult CheckHealth()
-        //{
-        //    IEndpointHealth endpointHealth;
-        //    var endpointHealthResult = endpointHealth.CheckHealth();
-
-        //    var data = new Dictionary<string, object> { ["Endpoints"] = endpointHealthResult.Data };
-
-        //    return _healthy && endpointHealthResult.Status == BusHealthStatus.Healthy
-        //        ? HealthResult.Healthy("Ready", data)
-        //        : HealthResult.Unhealthy($"Not ready: {_failureMessage}", data: data);
-        //}
-
     }
 }
