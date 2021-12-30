@@ -91,19 +91,19 @@ namespace CarsCrawler.Consumers.Consumer
 
                         Console.WriteLine(vehicleCard);
                         List<Vehicle> vehicles = new List<Vehicle>();
-                        foreach (dynamic item in (IEnumerable) vehicleCard.Result)
+                        foreach (dynamic item in (IEnumerable)vehicleCard.Result)
                         {
                             var vehicle = new Vehicle()
                             {
-                                image =      ((dynamic)item).image,
-                                miles =      ((dynamic)item).miles,
-                                price =      ((dynamic)item).price,
-                                rating =     ((dynamic)item).rating,
-                                title =      ((dynamic)item).title,
-                                carId =      ((dynamic)item).id,
+                                image = ((dynamic)item).image,
+                                miles = ((dynamic)item).miles,
+                                price = ((dynamic)item).price,
+                                rating = ((dynamic)item).rating,
+                                title = ((dynamic)item).title,
+                                carId = ((dynamic)item).id,
                                 dealerName = ((dynamic)item).dealerName,
                                 reportLink = ((dynamic)item).reportLink,
-                                stockType =  ((dynamic)item).stockType
+                                stockType = ((dynamic)item).stockType
 
                             };
                             vehicles.Add(vehicle);
@@ -129,8 +129,8 @@ namespace CarsCrawler.Consumers.Consumer
             IConsumerConfigurator<SearchConsumer> consumerConfigurator)
         {
             endpointConfigurator.ConfigureConsumeTopology = true;
-            endpointConfigurator.ClearMessageDeserializers();
-            endpointConfigurator.UseRawJsonSerializer();
+            //endpointConfigurator.ClearMessageDeserializers();
+            //endpointConfigurator.UseRawJsonSerializer();
         }
     }
 }
