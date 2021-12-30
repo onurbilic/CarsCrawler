@@ -118,7 +118,7 @@
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[5.0.0, )"
             },
             "MongoDB.Bson": {
               "target": "Package",

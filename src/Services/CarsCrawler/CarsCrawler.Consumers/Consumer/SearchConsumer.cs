@@ -108,12 +108,8 @@ namespace CarsCrawler.Consumers.Consumer
                             };
                             vehicles.Add(vehicle);
                         }
-                        
-                        await _mongo.InsertManyAsync(vehicles);
                     }
                 }
-
-
 
                 // Wait for user to press a key before exit
                 Console.ReadKey();
