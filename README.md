@@ -19,7 +19,7 @@ You should be able to browse different components of the application by using th
 - RabbitMq Manager :  http://host.docker.internal:15672/ _(username : rabbituser, password: passw0rd1)_
 ```
 
-You can also use [MongoDb Compass] (https://www.mongodb.com/try/download/compass) tool for the Mongo Gui. Compass is an interactive tool for querying. 
+You can also use [MongoDb Compass](https://www.mongodb.com/try/download/compass) tool for the Mongo Gui. Compass is an interactive tool for querying. 
 
 ```
 - MongoDb Connectionstring : mongodb://root:55financial@host.docker.internal:27018
