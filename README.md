@@ -19,7 +19,13 @@ You should be able to browse different components of the application by using th
 - RabbitMq Manager :  http://host.docker.internal:15672/ _(username : rabbituser, password: passw0rd1)_
 ```
 
+You can also use [MongoDb Compass] (https://www.mongodb.com/try/download/compass) tool for the Mongo Gui. Compass is an interactive tool for querying. 
+
 You should start from API for trigger to scraping data. You can use search method. Here is the example request below.
+
+```
+- MongoDb Connectionstring : mongodb://root:55financial@host.docker.internal:27018
+```
 
 ```
 {
