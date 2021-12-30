@@ -17,10 +17,10 @@ namespace CarsCrawler.Consumers.Consumer
     {
         private readonly IMongoRepository<Vehicle> _mongo;
 
-        //public SearchConsumer(IMongoRepository<Vehicle> mongo)
-        //{
-        //    _mongo = mongo;
-        //}
+        public SearchConsumer(IMongoRepository<Vehicle> mongo)
+        {
+            _mongo = mongo;
+        }
 
         public Task Consume(ConsumeContext<ISearchCarsCommand> context)
         {
@@ -86,18 +86,30 @@ namespace CarsCrawler.Consumers.Consumer
                     {
                         await Task.Delay(5000);
 
-                        var vehicle_card = await browser.EvaluateScriptAsync(
+                        var vehicleCard = await browser.EvaluateScriptAsync(
                             HtmlValueHelper.SetHtmlValue("vehicle-card", string.Empty, HtmlSelector.getVehicleCard));
 
-                        Console.WriteLine(vehicle_card);
-
-                        foreach (dynamic item in vehicle_card.Result as IEnumerable)
+                        Console.WriteLine(vehicleCard);
+                        List<Vehicle> vehicles = new List<Vehicle>();
+                        foreach (dynamic item in (IEnumerable) vehicleCard.Result)
                         {
-                            Console.WriteLine(item.title);
+                            var vehicle = new Vehicle()
+                            {
+                                image = item.image,
+                                miles = item.miles,
+                                price = item.price,
+                                rating = item.rating,
+                                title = item.title,
+                                carId = item.carId,
+                                dealerName = item.dealerName,
+                                reportLink = item.reportLink,
+                                stockType = item.stockType
+
+                            };
+                            vehicles.Add(vehicle);
                         }
-
-
-
+                        
+                        await _mongo.InsertManyAsync(vehicles);
                     }
                 }
 

@@ -4,7 +4,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using CarsCrawler.Consumers.Consumer;
 using CarsCrawler.Infrastructure.Caching;
+using CarsCrawler.Infrastructure.Repositories.Mongo;
 using MassTransit;
+using Microsoft.Extensions.Options;
 
 namespace CarsCrawler.Consumers
 {
@@ -29,6 +31,13 @@ namespace CarsCrawler.Consumers
                     if (Configuration != null)
                     {
                         services.AddSingleton<IConfiguration>(Configuration);
+                    
+                        services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDbSettings"));
+
+                        services.AddSingleton<IMongoDbSettings>(serviceProvider =>
+                            serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value);
+
+                        services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 
                         services.AddSingleton<RedisServer>();
 

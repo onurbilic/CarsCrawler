@@ -1930,11 +1930,12 @@
       ]
     },
     "CefSharp.Common.NETCore/96.0.180": {
-      "sha512": "6/TsxgctyzjJ5rBi9+5HQ7rNQLX7YrOjNVgK+3db2m3QTbxFU0p+La9vnvt1Gq0YnzoQuAURaaRwKoMLAv1sow==",
+      "sha512": "Pcb7mCSdOYjszO1Q4uDPAcS7HLZWo4O9Tvh2kFUlao33ZFrh1dKhf/j2SW+m+fhvbzTD3mJklQw2wLZqt8goEA==",
       "type": "package",
       "path": "cefsharp.common.netcore/96.0.180",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE",
         "buildTransitive/CefSharp.Common.NETCore.targets",
         "cefsharp.common.netcore.96.0.180.nupkg.sha512",
@@ -1981,11 +1982,12 @@
       ]
     },
     "CefSharp.OffScreen.NETCore/96.0.180": {
-      "sha512": "W/uVEDxSecMV/ajiugrOWwwzX+AjMneFWoHCHfInyseH5PdlysRvOaIsZDXtVijergzvb5xXGj/WGALMZu8bcQ==",
+      "sha512": "eF6/hIIkKmZei10U1TTv1c3J2BWntkKUirvXxj56RQCWruT75K3AIMidz99GhKwj1NOKmbN2Upw0Qoi29lcPTA==",
       "type": "package",
       "path": "cefsharp.offscreen.netcore/96.0.180",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE",
         "Readme.txt",
         "cefsharp.offscreen.netcore.96.0.180.nupkg.sha512",
@@ -1996,11 +1998,12 @@
       ]
     },
     "chromiumembeddedframework.runtime/96.0.18": {
-      "sha512": "hC0kQ3QkMjQZtTfmc/smxDwHjvHXgNiX7Y/s1PCXvOtsNZjaAuQYUVdkRfL2rxQFYXb0o0aqE5bQ+9pidGkg0Q==",
+      "sha512": "SNEb7aDsZBLYN+E07rhvAxXsqwRrr7IGimdAUU+suiBw2ehYM3/Gqr1w0zoRI7yAlsy+nY9x4x50yx0UXgO/5w==",
       "type": "package",
       "path": "chromiumembeddedframework.runtime/96.0.18",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "CEF/win-arm64/locales/am.pak",
         "CEF/win-arm64/locales/ar.pak",
         "CEF/win-arm64/locales/bg.pak",
@@ -6538,34 +6541,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\onurb\\.nuget\\packages\\": {}
+    "/Users/obilic/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure.csproj",
+      "projectUniqueName": "/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure.csproj",
       "projectName": "CarsCrawler.Infrastructure",
-      "projectPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\onurb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\obj\\",
+      "projectPath": "/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure.csproj",
+      "packagesPath": "/Users/obilic/.nuget/packages/",
+      "outputPath": "/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\onurb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/obilic/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj": {
-              "projectPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj"
+            "/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj": {
+              "projectPath": "/Users/obilic/Desktop/Workspace/Cars.com/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj"
             }
           }
         }
@@ -6628,7 +6629,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }
