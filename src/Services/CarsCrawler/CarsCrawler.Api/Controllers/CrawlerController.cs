@@ -72,9 +72,9 @@ namespace CarsCrawler.API.Controllers
         [Route("getcars")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public IActionResult Get()
+        public List<Vehicle> Get()
         {
-            return Ok(_vehicleRepository.AsQueryable().ToList());
+            return _vehicleRepository.AsQueryable().ToList();
         }
     }
 }
