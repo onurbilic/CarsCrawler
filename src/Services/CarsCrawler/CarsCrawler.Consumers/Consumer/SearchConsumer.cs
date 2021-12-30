@@ -95,15 +95,15 @@ namespace CarsCrawler.Consumers.Consumer
                         {
                             var vehicle = new Vehicle()
                             {
-                                image = item.image,
-                                miles = item.miles,
-                                price = item.price,
-                                rating = item.rating,
-                                title = item.title,
-                                carId = item.carId,
-                                dealerName = item.dealerName,
-                                reportLink = item.reportLink,
-                                stockType = item.stockType
+                                image =      ((dynamic)item).image,
+                                miles =      ((dynamic)item).miles,
+                                price =      ((dynamic)item).price,
+                                rating =     ((dynamic)item).rating,
+                                title =      ((dynamic)item).title,
+                                carId =      ((dynamic)item).id,
+                                dealerName = ((dynamic)item).dealerName,
+                                reportLink = ((dynamic)item).reportLink,
+                                stockType =  ((dynamic)item).stockType
 
                             };
                             vehicles.Add(vehicle);
@@ -113,11 +113,6 @@ namespace CarsCrawler.Consumers.Consumer
                     }
                 }
 
-                // Wait for user to press a key before exit
-                Console.ReadKey();
-
-                // Clean up Chromium objects. You need to call this in your application otherwise
-                // you will get a crash when closing.
                 Cef.Shutdown();
             });
         }
