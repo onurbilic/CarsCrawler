@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
@@ -21,8 +21,10 @@
       <PackageReference Include="MassTransit.AspNetCore" Version="7.2.2" />
       <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.2.2" />
       <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.2" />
+      <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="3.1.18" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+      <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
     </ItemGroup>
 
 </Project>

@@ -41,3 +41,4 @@ C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Inf
 C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.dll
 C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\ref\CarsCrawler.Infrastructure.dll
 C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.pdb
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Infrastructure\CarsCrawler.Infrastructure\obj\Debug\net5.0\CarsCrawler.Infrastructure.csproj.CopyComplete
