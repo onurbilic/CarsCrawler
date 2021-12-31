@@ -30,6 +30,14 @@ namespace CarsCrawler.SharedBusiness.Commands
         /// Zip Code
         /// </summary>
         public string Zip { get; set; }
+        /// <summary>
+        /// start from specific page
+        /// </summary>
+        public int PageStart { get; set; }
+        /// <summary>
+        /// scrap only page count
+        /// </summary>
+        public int PageCount { get; set; }
     }
     public class SearchCarsCommand : ISearchCarsCommand
     {
@@ -39,5 +47,7 @@ namespace CarsCrawler.SharedBusiness.Commands
         public string Price { get; set; }
         public string Distance { get; set; }
         public string Zip { get; set; }
+        public int PageStart { get; set; }
+        public int PageCount { get; set; }
     }
 }

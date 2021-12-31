@@ -1,4 +1,6 @@
-﻿namespace CarsCrawler.Infrastructure.Utils
+﻿using CarsCrawler.SharedBusiness.Commands;
+
+namespace CarsCrawler.SharedBusiness.CefSharp
 {
     public enum HtmlSelector
     {
@@ -55,6 +57,33 @@
                 default:
                     return string.Empty;
             }
+        }
+    }
+
+    public static class UrlHelper
+    {
+        public static string SearchUrlWithPage(string baseUrl, ISearchCarsCommand search, int navigatedPage)
+        {
+
+            string navigatedUrl = string.Format(@"{0}shopping/results/?
+                                                page={1}&
+                                                page_size=20&
+                                                list_price_max={2}&
+                                                makes[]={3}&
+                                                maximum_distance={4}&
+                                                models[]={5}&
+                                                stock_type={6}&
+                                                zip={7}",
+                                                baseUrl,
+                                                navigatedPage.ToString(),
+                                                search.Price,
+                                                search.Makes,
+                                                search.Distance,
+                                                search.Models,
+                                                search.StockType,
+                                                search.Zip);
+
+            return navigatedUrl;
         }
     }
 }

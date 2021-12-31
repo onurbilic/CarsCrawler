@@ -56,9 +56,11 @@ namespace CarsCrawler.API.Controllers
                     Distance = searchModel.Distance,
                     Price = searchModel.Price,
                     Zip = searchModel.Zip,
-                    Model = searchModel.Models,
+                    Models = searchModel.Models,
                     Makes = searchModel.Makes,
-                    StockType = searchModel.StockType
+                    StockType = searchModel.StockType,
+                    PageStart = searchModel.PageStart,
+                    PageCount = searchModel.PageCount
                 });
             }
             catch (Exception e)

@@ -10,6 +10,7 @@ using CarsCrawler.Consumers.CefCrawler;
 using CarsCrawler.Infrastructure.Utils;
 using CarsCrawler.Infrastructure.Repositories.Mongo;
 using System.Collections;
+using CarsCrawler.SharedBusiness.CefSharp;
 
 namespace CarsCrawler.Consumers.Consumer
 {
@@ -52,6 +53,7 @@ namespace CarsCrawler.Consumers.Consumer
 
                 using (var browser = new ChromiumWebBrowser(Consts.testUrl))
                 {
+
                     var initialLoadResponse = await browser.WaitForInitialLoadAsync();
 
                     if (!initialLoadResponse.Success)
@@ -84,32 +86,57 @@ namespace CarsCrawler.Consumers.Consumer
 
                     if (response.Success)
                     {
-                        await Task.Delay(5000);
-
-                        var vehicleCard = await browser.EvaluateScriptAsync(
-                            HtmlValueHelper.SetHtmlValue("vehicle-card", string.Empty, HtmlSelector.getVehicleCard));
-
-                        Console.WriteLine(vehicleCard);
-                        List<Vehicle> vehicles = new List<Vehicle>();
-                        foreach (dynamic item in (IEnumerable)vehicleCard.Result)
+                        for (int i = 1; i <= search.PageCount; i++)
                         {
-                            var vehicle = new Vehicle()
+                            //you can also navigate page to click the page link at first page. But I want to prefer go with url navigation.
+                            //TODO: Click on page link.
+                            var navigatedPage = search.PageStart + i;
+                            string  navigatedUrl = string.Format(@"{0}shopping/results/?
+                                                page={1}&
+                                                page_size=20&
+                                                list_price_max={2}&
+                                                makes[]={3}&
+                                                maximum_distance={4}&
+                                                models[]={5}&
+                                                stock_type={6}&
+                                                zip={7}",
+                                                Consts.testUrl,
+                                                navigatedPage.ToString(),
+                                                search.Price,
+                                                search.Makes,
+                                                search.Distance,
+                                                search.Models,
+                                                search.StockType,
+                                                search.Zip);
+                            browser.Load(navigatedUrl);
+                            await Task.Delay(5000);
+
+                            var vehicleCard = await browser.EvaluateScriptAsync(
+                                HtmlValueHelper.SetHtmlValue("vehicle-card", string.Empty, HtmlSelector.getVehicleCard));
+
+                            Console.WriteLine(vehicleCard);
+                            List<Vehicle> vehicles = new List<Vehicle>();
+                            foreach (dynamic item in (IEnumerable)vehicleCard.Result)
                             {
-                                image = ((dynamic)item).image,
-                                miles = ((dynamic)item).miles,
-                                price = ((dynamic)item).price,
-                                rating = ((dynamic)item).rating,
-                                title = ((dynamic)item).title,
-                                carId = ((dynamic)item).id,
-                                dealerName = ((dynamic)item).dealerName,
-                                reportLink = ((dynamic)item).reportLink,
-                                stockType = ((dynamic)item).stockType
+                                
+                                var vehicle = new Vehicle()
+                                {
+                                    image = ((dynamic)item).image,
+                                    miles = ((dynamic)item).miles,
+                                    price = ((dynamic)item).price,
+                                    rating = ((dynamic)item).rating,
+                                    title = ((dynamic)item).title,
+                                    carId = ((dynamic)item).id,
+                                    dealerName = ((dynamic)item).dealerName,
+                                    reportLink = ((dynamic)item).reportLink,
+                                    stockType = ((dynamic)item).stockType
 
-                            };
-                            vehicles.Add(vehicle);
+                                };
+                                vehicles.Add(vehicle);
+                            }
+
+                            _mongo.InsertMany(vehicles);
                         }
-
-                        _mongo.InsertMany(vehicles);
                     }
                 }
 

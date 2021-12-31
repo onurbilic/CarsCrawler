@@ -30,5 +30,8 @@ namespace CarsCrawler.Domain.Model
         /// Zip Code
         /// </summary>
         public string Zip { get; set; }
+        public int PageStart { get; set; }
+        public int PageCount { get; set; }
+
     }
 }
