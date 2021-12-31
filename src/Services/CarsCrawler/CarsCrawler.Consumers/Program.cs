@@ -49,10 +49,10 @@ namespace CarsCrawler.Consumers
 
                         ProjectSetting rs = new ProjectSetting();
                         rs.Environment = "Development";
+                        rs.RabbitMqInfo = new RabbitMqSetting();
                         rs.RabbitMqInfo.UserName = rabbitSettings.GetSection("UserName").Value;
                         rs.RabbitMqInfo.Password = rabbitSettings.GetSection("Password").Value;
                         rs.RabbitMqInfo.ServerName = rabbitSettings.GetSection("ServerName").Value;
-                        services.AddSingleton<IBus>(sp => BusConfigurator.Create(rs.RabbitMqInfo));
 
                         services.AddMassTransit(x =>
                         {

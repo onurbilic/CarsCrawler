@@ -126,8 +126,9 @@ namespace CarsCrawler.Consumers.Consumer
 
                                 };
                                 vehicles.Add(vehicle);
-                                
-                                await _bus.Publish<GetCarDetailCommand.IVehicleDetailCommand>(new
+                                var endpoint = await _bus.GetSendEndpoint(new Uri("exchange:In.Carsdotcom.CarDetail"));
+
+                                await endpoint.Send<IVehicleDetailCommand>(new
                                 {
                                     VehicleId = vehicle.carId
                                 });
@@ -137,8 +138,6 @@ namespace CarsCrawler.Consumers.Consumer
                         }
                     }
                 }
-
-                Cef.Shutdown();
             });
         }
     }
@@ -147,7 +146,7 @@ namespace CarsCrawler.Consumers.Consumer
     {
         public SearchConsumerDefinition()
         {
-            EndpointName = "In.Carsdotcom.Search";
+            EndpointName = Consts.SearchCarsCommand;
         }
 
         protected override void ConfigureConsumer(IReceiveEndpointConfigurator endpointConfigurator,

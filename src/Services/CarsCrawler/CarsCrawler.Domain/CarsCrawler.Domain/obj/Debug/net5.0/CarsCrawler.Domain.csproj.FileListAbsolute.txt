@@ -35,3 +35,4 @@ C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Dom
 C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.dll
 C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\ref\CarsCrawler.Domain.dll
 C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.pdb
+C:\Users\onurb\Source\Repos\CarsCrawler\src\Services\CarsCrawler\CarsCrawler.Domain\CarsCrawler.Domain\obj\Debug\net5.0\CarsCrawler.Domain.csproj.AssemblyReference.cache

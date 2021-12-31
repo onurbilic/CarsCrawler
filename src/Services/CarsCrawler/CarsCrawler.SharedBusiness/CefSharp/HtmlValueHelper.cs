@@ -9,7 +9,8 @@ namespace CarsCrawler.SharedBusiness.CefSharp
         select = 3,
         buttonClick = 4,
         submitFormClassName = 5,
-        getVehicleCard = 6
+        getVehicleCard = 6,
+        getVehicleDetail = 7
     }
     public static class HtmlValueHelper
     {
@@ -19,16 +20,24 @@ namespace CarsCrawler.SharedBusiness.CefSharp
             {
                 case HtmlSelector.name:
                     return string.Format("document.querySelector('[name={0}]').value = '{1}'", key, value);
+
+
                 case HtmlSelector.id:
                     return string.Format("document.querySelector('[id={0}]').value = '{1}';", key, value);
+
+
                 case HtmlSelector.select:
                     var js = string.Format(@"
                         document.getElementById('{0}').selectedIndex = 0
                         document.getElementById('{0}').options[0].text = 'Model S'
                         document.getElementById('{0}').options[0].value = '{1}'", key, value);
                     return js;
+
+
                 case HtmlSelector.submitFormClassName:
                     return string.Format("document.getElementsByClassName('{0}')[0].submit();", key);
+
+
                 case HtmlSelector.getVehicleCard:
                     var ve = @"(function()
                                 {
@@ -54,45 +63,66 @@ namespace CarsCrawler.SharedBusiness.CefSharp
                                 })();";
                     return ve;
 
+
+                case HtmlSelector.getVehicleDetail:
+                    var vehicleDetailQuery = @"(function()
+                                                {
+			                                    	let vehicle = { }
+
+			                                    	vehicle.stockType = document.getElementsByClassName('new- used')[0].innerHTML;
+
+                                                    vehicle.title = document.getElementsByClassName('listing-title')[0].innerHTML;
+                                                    vehicle.mileage = document.getElementsByClassName('listing-mileage')[0].innerHTML;
+                                                    vehicle.price = document.getElementsByClassName('primary-price')[0].innerHTML;
+
+                                                    let dt = document.querySelectorAll('.basics-section > .fancy-description-list > dt');
+                                                    let dd = document.querySelectorAll('.basics-section > .fancy-description-list > dd');
+
+                                                    var basicinfo = [];
+                                                    for (i = 0; i < dt.length; i++)
+                                                    {
+                                                        const basicdetail= { key:'',value: ''};
+                                                    basicdetail.key = dt[i].innerText;
+                                                    basicdetail.value = dd[i].innerText;
+                                                    console.log(basicdetail.key);
+                                                    basicinfo.push(basicdetail);
+                                                    }
+
+                                                    let dtf = document.querySelectorAll('.features-section > .fancy-description-list > dt');
+                                                    let ddf = document.querySelectorAll('.features-section > .fancy-description-list > dd');
+
+                                                    var featuresinfo = [];
+                                                    for (i = 0; i < dtf.length; i++)
+                                                    {
+                                                        const featuresdetail= { key:'',value: ''};
+                                                    featuresdetail.key = dtf[i].innerText;
+                                                    featuresdetail.value = ddf[i].innerText;
+                                                    console.log(featuresdetail.key);
+                                                    featuresinfo.push(featuresdetail);
+                                                    }
+
+                                                    vehicle.basicInfo = basicinfo;
+		                                        		
+		                                        	vehicle.featuresInfo = featuresinfo;
+		                                        	
+                                                    vehicle.sellerName = document.getElementsByClassName('seller-name')[0].innerText;
+		                                        	
+                                                    vehicle.dealerPhone = document.getElementsByClassName('dealer-phone')[0].innerText;
+
+                                                    vehicle.rating = document.getElementsByClassName('sds-rating')[0].innerText;
+
+                                                    vehicle.dealerAddress = document.getElementsByClassName('dealer-address')[0].innerText;
+
+                                                    vehicle.extLink = document.getElementsByClassName('sds-link--ext')[0].href;
+
+                                                    vehicle.sellerNotes = document.getElementsByClassName('sellers-notes')[0].innerText;
+		                                        	
+		                                        	return vehicle;
+                                                })();";
+                    return vehicleDetailQuery;
                 default:
                     return string.Empty;
             }
-            
-            // let dt = document.querySelectorAll('.basics-section > .fancy-description-list > dt');
-            // let dd = document.querySelectorAll('.basics-section > .fancy-description-list > dd');
-            //
-            // var basicInfo = [];
-            // for (i = 0; i < dt.length; i++) {
-            //     const basicDetail= {key:"",value:""};
-            //     basicDetail.key = dt[i].innerText;
-            //     basicDetail.value= dd[i].innerText;
-            //     console.log(basicDetail.key);
-            //     basicInfo.push(basicDetail);
-            // }
-            // console.log(basicInfo);
-            
-            // let dt = document.querySelectorAll('.features-section > .fancy-description-list > dt');
-            // let dd = document.querySelectorAll('.features-section > .fancy-description-list > dd');
-            //
-            // var basicInfo = [];
-            // for (i = 0; i < dt.length; i++) {
-            //     const basicDetail= {key:"",value:""};
-            //     basicDetail.key = dt[i].innerText;
-            //     basicDetail.value= dd[i].innerText;
-            //     console.log(basicDetail.key);
-            //     basicInfo.push(basicDetail);
-            // }
-            // console.log(basicInfo);
-            
-            //document.getElementsByClassName("seller-name")[0].innerText
-            
-            // document.getElementsByClassName("sds-rating")[0].innerText;
-            
-            // document.getElementsByClassName("dealer-address")[0].innerText;
-            
-            // document.getElementsByClassName("sds-link--ext")[0].href;
-            
-            // document.getElementsByClassName("sellers-notes")[0].innerText;
         }
     }
 
