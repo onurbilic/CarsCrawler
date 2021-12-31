@@ -15,12 +15,7 @@ IConfiguration configuration = new ConfigurationBuilder()
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHealthChecks().AddRabbitMQ("amqp://rabbituser:passw0rd1@localhost:5672/",null,null,null);
-
-
-// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -40,20 +35,9 @@ builder.Services.AddCors();
 
 var app = builder.Build();
 
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseExceptionHandler("/error-development");
-//}
-//else
-//{
-//    app.UseExceptionHandler("/error");
-//}
 app.UseDeveloperExceptionPage();
 app.UseSwagger();
 app.UseSwaggerUI();
-app.UseCors(
-        options => options.WithOrigins("http://localhost.com").AllowAnyMethod()
-    );
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

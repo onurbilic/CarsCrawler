@@ -4,7 +4,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using CarsCrawler.Consumers.Consumer;
 using CarsCrawler.Infrastructure.Caching;
+using CarsCrawler.Infrastructure.RabbitMq;
 using CarsCrawler.Infrastructure.Repositories.Mongo;
+using CarsCrawler.Infrastructure.Utils;
 using MassTransit;
 using Microsoft.Extensions.Options;
 
@@ -12,7 +14,7 @@ namespace CarsCrawler.Consumers
 {
     public static class Program
     {
-        public static IConfigurationRoot? Configuration;
+        private static IConfigurationRoot? Configuration;
 
         private static void Main(string[] args)
         {
@@ -45,6 +47,12 @@ namespace CarsCrawler.Consumers
 
                         var rabbitSettings = Configuration.GetSection("Settings").GetSection("RabbitMqInfo");
 
+                        ProjectSetting rs = new ProjectSetting();
+                        rs.Environment = "Development";
+                        rs.RabbitMqInfo.UserName = rabbitSettings.GetSection("UserName").Value;
+                        rs.RabbitMqInfo.Password = rabbitSettings.GetSection("Password").Value;
+                        rs.RabbitMqInfo.ServerName = rabbitSettings.GetSection("ServerName").Value;
+                        services.AddSingleton<IBus>(sp => BusConfigurator.Create(rs.RabbitMqInfo));
 
                         services.AddMassTransit(x =>
                         {

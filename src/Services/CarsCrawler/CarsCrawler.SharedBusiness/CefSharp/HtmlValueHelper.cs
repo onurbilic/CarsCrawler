@@ -38,14 +38,14 @@ namespace CarsCrawler.SharedBusiness.CefSharp
                                     { 
                                             const car = {};
                                             car.id = vehicle.id;
-                                            car.title = vehicle.getElementsByClassName('title')[0].innerHTML
+                                            car.title = vehicle.getElementsByClassName('title')[0].innerText
                                             car.image = vehicle.getElementsByClassName('vehicle-image')[0].src;
-                                            car.stockType = vehicle.getElementsByClassName('stock-type')[0].innerHTML;
-                                            car.miles = vehicle.getElementsByClassName('mileage')[0].innerHTML;
-                                            car.price = vehicle.getElementsByClassName('primary-price')[0].innerHTML;
+                                            car.stockType = vehicle.getElementsByClassName('stock-type')[0].innerText;
+                                            car.miles = vehicle.getElementsByClassName('mileage')[0].innerText;
+                                            car.price = vehicle.getElementsByClassName('primary-price')[0].innerText;
                                             car.reportLink = vehicle.getElementsByClassName('sds-link--ext')[0].href;
-                                            car.dealerName = vehicle.getElementsByClassName('dealer-name')[0].innerHTML;
-                                            car.rating = vehicle.getElementsByClassName('sds-rating__count')[0].innerHTML;
+                                            car.dealerName = vehicle.getElementsByClassName('dealer-name')[0].innerText;
+                                            car.rating = vehicle.getElementsByClassName('sds-rating__count')[0].innerText;
                                             vehicleArray.push(car); 
                                     });  
 
@@ -57,6 +57,42 @@ namespace CarsCrawler.SharedBusiness.CefSharp
                 default:
                     return string.Empty;
             }
+            
+            // let dt = document.querySelectorAll('.basics-section > .fancy-description-list > dt');
+            // let dd = document.querySelectorAll('.basics-section > .fancy-description-list > dd');
+            //
+            // var basicInfo = [];
+            // for (i = 0; i < dt.length; i++) {
+            //     const basicDetail= {key:"",value:""};
+            //     basicDetail.key = dt[i].innerText;
+            //     basicDetail.value= dd[i].innerText;
+            //     console.log(basicDetail.key);
+            //     basicInfo.push(basicDetail);
+            // }
+            // console.log(basicInfo);
+            
+            // let dt = document.querySelectorAll('.features-section > .fancy-description-list > dt');
+            // let dd = document.querySelectorAll('.features-section > .fancy-description-list > dd');
+            //
+            // var basicInfo = [];
+            // for (i = 0; i < dt.length; i++) {
+            //     const basicDetail= {key:"",value:""};
+            //     basicDetail.key = dt[i].innerText;
+            //     basicDetail.value= dd[i].innerText;
+            //     console.log(basicDetail.key);
+            //     basicInfo.push(basicDetail);
+            // }
+            // console.log(basicInfo);
+            
+            //document.getElementsByClassName("seller-name")[0].innerText
+            
+            // document.getElementsByClassName("sds-rating")[0].innerText;
+            
+            // document.getElementsByClassName("dealer-address")[0].innerText;
+            
+            // document.getElementsByClassName("sds-link--ext")[0].href;
+            
+            // document.getElementsByClassName("sellers-notes")[0].innerText;
         }
     }
 

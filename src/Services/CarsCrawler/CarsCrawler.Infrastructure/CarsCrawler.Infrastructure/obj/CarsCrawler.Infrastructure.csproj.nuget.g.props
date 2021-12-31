@@ -4,76 +4,73 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\onurb\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/obilic/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/obilic/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.11.1</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.0.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\onurb\.nuget\packages\" />
+    <SourceRoot Include="/Users/obilic/.nuget/packages/" />
   </ItemGroup>
-  <PropertyGroup>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-  </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Content Include="$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\linux\libsnappy64.so" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\linux\libsnappy64.so')">
+    <Content Include="$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/linux/libsnappy64.so" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/linux/libsnappy64.so')">
       <NuGetPackageId>MongoDB.Driver.Core</NuGetPackageId>
       <NuGetPackageVersion>2.14.1</NuGetPackageVersion>
       <NuGetItemType>Content</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>
-      <Link>Core\Compression\Snappy\lib\linux\libsnappy64.so</Link>
+      <Link>Core/Compression/Snappy/lib/linux/libsnappy64.so</Link>
     </Content>
-    <Content Include="$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\osx\libsnappy64.dylib" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\osx\libsnappy64.dylib')">
+    <Content Include="$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/osx/libsnappy64.dylib" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/osx/libsnappy64.dylib')">
       <NuGetPackageId>MongoDB.Driver.Core</NuGetPackageId>
       <NuGetPackageVersion>2.14.1</NuGetPackageVersion>
       <NuGetItemType>Content</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>
-      <Link>Core\Compression\Snappy\lib\osx\libsnappy64.dylib</Link>
+      <Link>Core/Compression/Snappy/lib/osx/libsnappy64.dylib</Link>
     </Content>
-    <Content Include="$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\win\snappy32.dll" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\win\snappy32.dll')">
+    <Content Include="$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/win/snappy32.dll" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/win/snappy32.dll')">
       <NuGetPackageId>MongoDB.Driver.Core</NuGetPackageId>
       <NuGetPackageVersion>2.14.1</NuGetPackageVersion>
       <NuGetItemType>Content</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>
-      <Link>Core\Compression\Snappy\lib\win\snappy32.dll</Link>
+      <Link>Core/Compression/Snappy/lib/win/snappy32.dll</Link>
     </Content>
-    <Content Include="$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\win\snappy64.dll" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\win\snappy64.dll')">
+    <Content Include="$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/win/snappy64.dll" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Snappy/lib/win/snappy64.dll')">
       <NuGetPackageId>MongoDB.Driver.Core</NuGetPackageId>
       <NuGetPackageVersion>2.14.1</NuGetPackageVersion>
       <NuGetItemType>Content</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>
-      <Link>Core\Compression\Snappy\lib\win\snappy64.dll</Link>
+      <Link>Core/Compression/Snappy/lib/win/snappy64.dll</Link>
     </Content>
-    <Content Include="$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Zstandard\lib\linux\libzstd.so" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Zstandard\lib\linux\libzstd.so')">
+    <Content Include="$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Zstandard/lib/linux/libzstd.so" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Zstandard/lib/linux/libzstd.so')">
       <NuGetPackageId>MongoDB.Driver.Core</NuGetPackageId>
       <NuGetPackageVersion>2.14.1</NuGetPackageVersion>
       <NuGetItemType>Content</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>
-      <Link>Core\Compression\Zstandard\lib\linux\libzstd.so</Link>
+      <Link>Core/Compression/Zstandard/lib/linux/libzstd.so</Link>
     </Content>
-    <Content Include="$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Zstandard\lib\osx\libzstd.dylib" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Zstandard\lib\osx\libzstd.dylib')">
+    <Content Include="$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Zstandard/lib/osx/libzstd.dylib" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Zstandard/lib/osx/libzstd.dylib')">
       <NuGetPackageId>MongoDB.Driver.Core</NuGetPackageId>
       <NuGetPackageVersion>2.14.1</NuGetPackageVersion>
       <NuGetItemType>Content</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>
-      <Link>Core\Compression\Zstandard\lib\osx\libzstd.dylib</Link>
+      <Link>Core/Compression/Zstandard/lib/osx/libzstd.dylib</Link>
     </Content>
-    <Content Include="$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Zstandard\lib\win\libzstd.dll" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core\2.14.1\contentFiles\any\netstandard2.1\Core\Compression\Zstandard\lib\win\libzstd.dll')">
+    <Content Include="$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Zstandard/lib/win/libzstd.dll" Condition="Exists('$(NuGetPackageRoot)mongodb.driver.core/2.14.1/contentFiles/any/netstandard2.1/Core/Compression/Zstandard/lib/win/libzstd.dll')">
       <NuGetPackageId>MongoDB.Driver.Core</NuGetPackageId>
       <NuGetPackageVersion>2.14.1</NuGetPackageVersion>
       <NuGetItemType>Content</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>
-      <Link>Core\Compression\Zstandard\lib\win\libzstd.dll</Link>
+      <Link>Core/Compression/Zstandard/lib/win/libzstd.dll</Link>
     </Content>
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)chromiumembeddedframework.runtime\96.0.18\buildTransitive\chromiumembeddedframework.runtime.props" Condition="Exists('$(NuGetPackageRoot)chromiumembeddedframework.runtime\96.0.18\buildTransitive\chromiumembeddedframework.runtime.props')" />
+    <Import Project="$(NuGetPackageRoot)chromiumembeddedframework.runtime/96.0.18/buildTransitive/chromiumembeddedframework.runtime.props" Condition="Exists('$(NuGetPackageRoot)chromiumembeddedframework.runtime/96.0.18/buildTransitive/chromiumembeddedframework.runtime.props')" />
   </ImportGroup>
 </Project>

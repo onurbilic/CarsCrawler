@@ -1,5 +1,6 @@
 using CarsCrawler.Domain.Model;
 using CarsCrawler.Infrastructure.Repositories.Mongo;
+using CarsCrawler.SharedBusiness.Commands;
 using MassTransit;
 using MassTransit.ConsumeConfigurators;
 using MassTransit.Definition;
@@ -9,16 +10,19 @@ namespace CarsCrawler.Consumers.Consumer
     public class CarDetailConsumer : IConsumer
     {
         private readonly IMongoRepository<VehicleDetail> _mongo;
+        private readonly IBus _bus;
 
-        public CarDetailConsumer(IMongoRepository<VehicleDetail> mongo)
+        public CarDetailConsumer(IMongoRepository<VehicleDetail> mongo,IBus bus)
         {
+                
             _mongo = mongo;
+            _bus = bus;
         }
 
-        public Task Consume(ConsumeContext<string> context)
+        public Task Consume(ConsumeContext<GetCarDetailCommand.IVehicleDetailCommand> context)
         {
-            Console.WriteLine(context);
 
+            
             return Task.CompletedTask;
         }
     }

@@ -17,10 +17,12 @@ namespace CarsCrawler.Consumers.Consumer
     public class SearchConsumer : IConsumer<ISearchCarsCommand>
     {
         private readonly IMongoRepository<Vehicle> _mongo;
+        private readonly IBus _bus;
 
-        public SearchConsumer(IMongoRepository<Vehicle> mongo)
+        public SearchConsumer(IMongoRepository<Vehicle> mongo,IBus bus)
         {
             _mongo = mongo;
+            _bus = bus;
         }
 
         public Task Consume(ConsumeContext<ISearchCarsCommand> context)
@@ -58,8 +60,8 @@ namespace CarsCrawler.Consumers.Consumer
 
                     if (!initialLoadResponse.Success)
                     {
-                        throw new Exception(string.Format("Page load failed with ErrorCode:{0}, HttpStatusCode:{1}",
-                            initialLoadResponse.ErrorCode, initialLoadResponse.HttpStatusCode));
+                        throw new Exception(
+                            $"Page load failed with ErrorCode:{initialLoadResponse.ErrorCode}, HttpStatusCode:{initialLoadResponse.HttpStatusCode}");
                     }
 
                     _ = await browser.EvaluateScriptAsync(
@@ -86,28 +88,20 @@ namespace CarsCrawler.Consumers.Consumer
 
                     if (response.Success)
                     {
-                        for (int i = 1; i <= search.PageCount; i++)
+                        for (int i = 0; i < search.PageCount; i++)
                         {
                             //you can also navigate page to click the page link at first page. But I want to prefer go with url navigation.
                             //TODO: Click on page link.
                             var navigatedPage = search.PageStart + i;
-                            string  navigatedUrl = string.Format(@"{0}shopping/results/?
-                                                page={1}&
+                            var  navigatedUrl = $@"{Consts.testUrl}shopping/results/?
+                                                page={navigatedPage.ToString()}&
                                                 page_size=20&
-                                                list_price_max={2}&
-                                                makes[]={3}&
-                                                maximum_distance={4}&
-                                                models[]={5}&
-                                                stock_type={6}&
-                                                zip={7}",
-                                                Consts.testUrl,
-                                                navigatedPage.ToString(),
-                                                search.Price,
-                                                search.Makes,
-                                                search.Distance,
-                                                search.Models,
-                                                search.StockType,
-                                                search.Zip);
+                                                list_price_max={search.Price}&
+                                                makes[]={search.Makes}&
+                                                maximum_distance={search.Distance}&
+                                                models[]={search.Models}&
+                                                stock_type={search.StockType}&
+                                                zip={search.Zip}";
                             browser.Load(navigatedUrl);
                             await Task.Delay(5000);
 
@@ -118,7 +112,6 @@ namespace CarsCrawler.Consumers.Consumer
                             List<Vehicle> vehicles = new List<Vehicle>();
                             foreach (dynamic item in (IEnumerable)vehicleCard.Result)
                             {
-                                
                                 var vehicle = new Vehicle()
                                 {
                                     image = ((dynamic)item).image,
@@ -133,9 +126,14 @@ namespace CarsCrawler.Consumers.Consumer
 
                                 };
                                 vehicles.Add(vehicle);
+                                
+                                await _bus.Publish<GetCarDetailCommand.IVehicleDetailCommand>(new
+                                {
+                                    VehicleId = vehicle.carId
+                                });
                             }
-
-                            _mongo.InsertMany(vehicles);
+                            
+                            await _mongo.InsertManyAsync(vehicles);
                         }
                     }
                 }
@@ -156,8 +154,6 @@ namespace CarsCrawler.Consumers.Consumer
             IConsumerConfigurator<SearchConsumer> consumerConfigurator)
         {
             endpointConfigurator.ConfigureConsumeTopology = true;
-            //endpointConfigurator.ClearMessageDeserializers();
-            //endpointConfigurator.UseRawJsonSerializer();
         }
     }
 }
