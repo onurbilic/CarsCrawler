@@ -6,9 +6,7 @@ using MongoDB.Driver;
 
 namespace CarsCrawler.Infrastructure.Repositories.Mongo
 {
-
-
-public class MongoRepository<TDocument> : IMongoRepository<TDocument>
+    public class MongoRepository<TDocument> : IMongoRepository<TDocument>
         where TDocument : IDocument
     {
         private readonly IMongoCollection<TDocument> _collection;
@@ -147,6 +145,11 @@ public class MongoRepository<TDocument> : IMongoRepository<TDocument>
         {
             return Task.Run(() => _collection.DeleteManyAsync(filterExpression));
         }
-    }
 
+        public Task UpdateOneAsync(Expression<Func<TDocument,bool>> filterExpression,
+            UpdateDefinition<TDocument> updateDefinition)
+        {
+            return Task.Run(() => { _collection.UpdateOne(filterExpression, updateDefinition); });
+        }
+    }
 }

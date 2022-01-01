@@ -19,7 +19,7 @@ namespace CarsCrawler.Consumers.Consumer
         private readonly IMongoRepository<Vehicle> _mongo;
         private readonly IBus _bus;
 
-        public SearchConsumer(IMongoRepository<Vehicle> mongo,IBus bus)
+        public SearchConsumer(IMongoRepository<Vehicle> mongo, IBus bus)
         {
             _mongo = mongo;
             _bus = bus;
@@ -55,7 +55,6 @@ namespace CarsCrawler.Consumers.Consumer
 
                 using (var browser = new ChromiumWebBrowser(Consts.testUrl))
                 {
-
                     var initialLoadResponse = await browser.WaitForInitialLoadAsync();
 
                     if (!initialLoadResponse.Success)
@@ -80,10 +79,10 @@ namespace CarsCrawler.Consumers.Consumer
                         HtmlValueHelper.SetHtmlValue("maximum_distance", search.Distance, HtmlSelector.name));
                     await Task.Delay(100);
                     _ = await browser.EvaluateScriptAsync(
-                       HtmlValueHelper.SetHtmlValue("zip", search.Zip, HtmlSelector.name));
+                        HtmlValueHelper.SetHtmlValue("zip", search.Zip, HtmlSelector.name));
                     await Task.Delay(100);
                     var response = await browser.EvaluateScriptAsync(
-                    HtmlValueHelper.SetHtmlValue("search-form", "", HtmlSelector.submitFormClassName));
+                        HtmlValueHelper.SetHtmlValue("search-form", "", HtmlSelector.submitFormClassName));
                     await Task.Delay(3000);
 
                     if (response.Success)
@@ -93,7 +92,7 @@ namespace CarsCrawler.Consumers.Consumer
                             //you can also navigate page to click the page link at first page. But I want to prefer go with url navigation.
                             //TODO: Click on page link.
                             var navigatedPage = search.PageStart + i;
-                            var  navigatedUrl = $@"{Consts.testUrl}shopping/results/?
+                            var navigatedUrl = $@"{Consts.testUrl}shopping/results/?
                                                 page={navigatedPage.ToString()}&
                                                 page_size=20&
                                                 list_price_max={search.Price}&
@@ -106,36 +105,29 @@ namespace CarsCrawler.Consumers.Consumer
                             await Task.Delay(5000);
 
                             var vehicleCard = await browser.EvaluateScriptAsync(
-                                HtmlValueHelper.SetHtmlValue("vehicle-card", string.Empty, HtmlSelector.getVehicleCard));
+                                HtmlValueHelper.SetHtmlValue("vehicle-card", string.Empty,
+                                    HtmlSelector.getVehicleCard));
 
                             Console.WriteLine(vehicleCard);
                             List<Vehicle> vehicles = new List<Vehicle>();
-                            foreach (dynamic item in (IEnumerable)vehicleCard.Result)
+                            foreach (dynamic item in (IEnumerable) vehicleCard.Result)
                             {
                                 var vehicle = new Vehicle()
                                 {
-                                    image = ((dynamic)item).image,
-                                    miles = ((dynamic)item).miles,
-                                    price = ((dynamic)item).price,
-                                    rating = ((dynamic)item).rating,
-                                    title = ((dynamic)item).title,
-                                    carId = ((dynamic)item).id,
-                                    dealerName = ((dynamic)item).dealerName,
-                                    reportLink = ((dynamic)item).reportLink,
-                                    stockType = ((dynamic)item).stockType,
+                                    image = ((dynamic) item).image,
+                                    miles = ((dynamic) item).miles,
+                                    price = ((dynamic) item).price,
+                                    rating = ((dynamic) item).rating,
+                                    title = ((dynamic) item).title,
+                                    carId = ((dynamic) item).id,
+                                    dealerName = ((dynamic) item).dealerName,
+                                    reportLink = ((dynamic) item).reportLink,
+                                    stockType = ((dynamic) item).stockType,
                                     Status = 1
-
                                 };
                                 vehicles.Add(vehicle);
-                                //var endpoint = await _bus.GetSendEndpoint(new Uri("queue:In.Carsdotcom.CarDetail"));
-
-
-                                //await endpoint.Send<IVehicleDetailCommand>(new
-                                //{
-                                //    VehicleId = vehicle.carId
-                                //});
                             }
-                            
+                            //we created status for outbox pattern, may we can change status for reusable scrapping
                             await _mongo.InsertManyAsync(vehicles);
                         }
                     }

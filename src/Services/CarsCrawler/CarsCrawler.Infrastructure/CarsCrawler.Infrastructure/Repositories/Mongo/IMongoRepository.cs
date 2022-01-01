@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using MongoDB.Bson;
 using CarsCrawler.Domain.SeedWork;
+using MongoDB.Driver;
 
 namespace CarsCrawler.Infrastructure.Repositories.Mongo
 {
@@ -49,5 +50,7 @@ namespace CarsCrawler.Infrastructure.Repositories.Mongo
         void DeleteMany(Expression<Func<TDocument, bool>> filterExpression);
 
         Task DeleteManyAsync(Expression<Func<TDocument, bool>> filterExpression);
+
+        Task UpdateOneAsync(Expression<Func<TDocument, bool>> filterExpression, UpdateDefinition<TDocument> updateDefinition);
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using CarsCrawler.Consumers.Consumer;
+using CarsCrawler.Consumers.Producer;
 using CarsCrawler.Infrastructure.Caching;
 using CarsCrawler.Infrastructure.RabbitMq;
 using CarsCrawler.Infrastructure.Repositories.Mongo;
@@ -49,13 +50,6 @@ namespace CarsCrawler.Consumers
 
                         var rabbitSettings = Configuration.GetSection("Settings").GetSection("RabbitMqInfo");
 
-                        ProjectSetting rs = new ProjectSetting();
-                        rs.Environment = "Development";
-                        rs.RabbitMqInfo = new RabbitMqSetting();
-                        rs.RabbitMqInfo.UserName = rabbitSettings.GetSection("UserName").Value;
-                        rs.RabbitMqInfo.Password = rabbitSettings.GetSection("Password").Value;
-                        rs.RabbitMqInfo.ServerName = rabbitSettings.GetSection("ServerName").Value;
-
                         services.AddMassTransit(x =>
                         {
                             x.AddConsumer<SearchConsumer>(typeof(SearchConsumerDefinition));
@@ -74,7 +68,7 @@ namespace CarsCrawler.Consumers
                         });
 
                         services.AddMassTransitHostedService();
-
+                        services.AddHostedService<CarDetailProducer>();
                     }
                 });
     }
