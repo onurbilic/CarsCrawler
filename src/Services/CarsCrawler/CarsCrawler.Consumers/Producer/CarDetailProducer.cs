@@ -30,21 +30,20 @@ namespace CarsCrawler.Consumers.Producer
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                IEnumerable<Vehicle> vehicles = _vehicleRepo.FilterBy(p => p.Status == 1);
+                Vehicle vehicle = _vehicleRepo.FindOneAsync(p => p.Status == 1).Result;
 
-                foreach (var item in vehicles)
+                if (vehicle != null)
                 {
+                    var update = Builders<Vehicle>.Update.Set("Status", 2);
+                    await _vehicleRepo.UpdateOneAsync(f => f.carId == vehicle.carId, update);
+
                     await _bus.Publish<IVehicleDetailCommand>(new VehicleDetailCommand()
                     {
-                        VehicleId = item.carId
+                        VehicleId = vehicle.carId
                     }, stoppingToken);
-                    
-                    var update = Builders<Vehicle>.Update.Set("Status", 1);
 
-                    await _vehicleRepo.UpdateOneAsync(f => f.carId == item.carId, update);
                 }
-
-                await Task.Delay(5000, stoppingToken);
+                await Task.Delay(3000, stoppingToken);
             }
         }
     }

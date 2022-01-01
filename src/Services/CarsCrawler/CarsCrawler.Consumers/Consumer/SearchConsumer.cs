@@ -83,7 +83,7 @@ namespace CarsCrawler.Consumers.Consumer
                     await Task.Delay(100);
                     var response = await browser.EvaluateScriptAsync(
                         HtmlValueHelper.SetHtmlValue("search-form", "", HtmlSelector.submitFormClassName));
-                    await Task.Delay(3000);
+                    await Task.Delay(10000);
 
                     if (response.Success)
                     {
@@ -102,7 +102,13 @@ namespace CarsCrawler.Consumers.Consumer
                                                 stock_type={search.StockType}&
                                                 zip={search.Zip}";
                             browser.Load(navigatedUrl);
-                            await Task.Delay(5000);
+                            var initialnewLoadResponse = await browser.WaitForInitialLoadAsync();
+
+                            if (!initialnewLoadResponse.Success)
+                            {
+                                throw new Exception(
+                                    $"Page load failed with ErrorCode:{initialLoadResponse.ErrorCode}, HttpStatusCode:{initialLoadResponse.HttpStatusCode}");
+                            }
 
                             var vehicleCard = await browser.EvaluateScriptAsync(
                                 HtmlValueHelper.SetHtmlValue("vehicle-card", string.Empty,
@@ -128,6 +134,7 @@ namespace CarsCrawler.Consumers.Consumer
                                 vehicles.Add(vehicle);
                             }
                             //we created status for outbox pattern, may we can change status for reusable scrapping
+                            //also we can send command through rabbit queue. We should not write the database. But here we use outbox pattern
                             await _mongo.InsertManyAsync(vehicles);
                         }
                     }
@@ -141,12 +148,6 @@ namespace CarsCrawler.Consumers.Consumer
         public SearchConsumerDefinition()
         {
             EndpointName = Consts.SearchCarsCommand;
-        }
-
-        protected override void ConfigureConsumer(IReceiveEndpointConfigurator endpointConfigurator,
-            IConsumerConfigurator<SearchConsumer> consumerConfigurator)
-        {
-            endpointConfigurator.ConfigureConsumeTopology = true;
         }
     }
 }

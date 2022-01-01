@@ -61,7 +61,6 @@ namespace CarsCrawler.Consumers
                                     h.Username(rabbitSettings.GetSection("UserName").Value);
                                     h.Password(rabbitSettings.GetSection("Password").Value);
                                 });
-                                cfg.Publish<IVehicleDetailCommand>(e => e.ExchangeType = ExchangeType.Fanout);
 
                                 cfg.ConfigureEndpoints(context);
                             });

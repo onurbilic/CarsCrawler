@@ -20,8 +20,14 @@
                 }, TaskScheduler.Default);
 
                 syncCtx.RunOnCurrentThread();
-
-                t.GetAwaiter().GetResult();
+                try
+                {
+                    t.GetAwaiter().GetResult();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
             finally
             {

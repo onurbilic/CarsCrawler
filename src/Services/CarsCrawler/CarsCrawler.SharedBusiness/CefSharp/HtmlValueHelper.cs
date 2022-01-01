@@ -69,7 +69,7 @@ namespace CarsCrawler.SharedBusiness.CefSharp
                                                 {
 			                                    	let vehicle = { }
 
-			                                    	vehicle.stockType = document.getElementsByClassName('new- used')[0].innerHTML;
+			                                    	vehicle.stockType = document.getElementsByClassName('new-used')[0].innerHTML;
 
                                                     vehicle.title = document.getElementsByClassName('listing-title')[0].innerHTML;
                                                     vehicle.mileage = document.getElementsByClassName('listing-mileage')[0].innerHTML;
@@ -82,10 +82,10 @@ namespace CarsCrawler.SharedBusiness.CefSharp
                                                     for (i = 0; i < dt.length; i++)
                                                     {
                                                         const basicdetail= { key:'',value: ''};
-                                                    basicdetail.key = dt[i].innerText;
-                                                    basicdetail.value = dd[i].innerText;
-                                                    console.log(basicdetail.key);
-                                                    basicinfo.push(basicdetail);
+                                                        basicdetail.key = dt[i].innerText;
+                                                        basicdetail.value = dd[i].innerText;
+                                                        console.log(basicdetail.key);
+                                                        basicinfo.push(basicdetail);
                                                     }
 
                                                     let dtf = document.querySelectorAll('.features-section > .fancy-description-list > dt');
@@ -95,27 +95,27 @@ namespace CarsCrawler.SharedBusiness.CefSharp
                                                     for (i = 0; i < dtf.length; i++)
                                                     {
                                                         const featuresdetail= { key:'',value: ''};
-                                                    featuresdetail.key = dtf[i].innerText;
-                                                    featuresdetail.value = ddf[i].innerText;
-                                                    console.log(featuresdetail.key);
-                                                    featuresinfo.push(featuresdetail);
+                                                        featuresdetail.key = dtf[i].innerText;
+                                                        featuresdetail.value = ddf[i].innerText;
+                                                        console.log(featuresdetail.key);
+                                                        featuresinfo.push(featuresdetail);
                                                     }
 
                                                     vehicle.basicInfo = basicinfo;
 		                                        		
 		                                        	vehicle.featuresInfo = featuresinfo;
 		                                        	
-                                                    vehicle.sellerName = document.getElementsByClassName('seller-name')[0].innerText;
+                                                    if(document.getElementsByClassName('seller-name')[0] != undefined){vehicle.sellerName = document.getElementsByClassName('seller-name')[0].innerText}else{vehicle.sellerName = '-' };
 		                                        	
-                                                    vehicle.dealerPhone = document.getElementsByClassName('dealer-phone')[0].innerText;
+                                                    if(document.getElementsByClassName('dealer-phone')[0] != undefined){vehicle.dealerPhone = document.getElementsByClassName('dealer-phone')[0].innerText}else{vehicle.dealerPhone =  '-' };
 
-                                                    vehicle.rating = document.getElementsByClassName('sds-rating')[0].innerText;
+                                                    if(document.getElementsByClassName('sds-rating')[0] != undefined){vehicle.rating = document.getElementsByClassName('sds-rating')[0].innerText}else{vehicle.rating =  '-' };
 
-                                                    vehicle.dealerAddress = document.getElementsByClassName('dealer-address')[0].innerText;
+                                                    if(document.getElementsByClassName('dealer-address')[0] != undefined){vehicle.dealerAddress = document.getElementsByClassName('dealer-address')[0].innerText}else{vehicle.dealerAddress =  '-' };
 
-                                                    vehicle.extLink = document.getElementsByClassName('sds-link--ext')[0].href;
+                                                    if(document.getElementsByClassName('sds-link--ext')[0] != undefined){vehicle.extLink = document.getElementsByClassName('sds-link--ext')[0].innerText}else{vehicle.extLink =  '-' };
 
-                                                    vehicle.sellerNotes = document.getElementsByClassName('sellers-notes')[0].innerText;
+                                                    if(document.getElementsByClassName('sellers-notes')[0] != undefined){vehicle.sellerNotes = document.getElementsByClassName('sellers-notes')[0].innerText}else{vehicle.sellerNotes =  '-' };
 		                                        	
 		                                        	return vehicle;
                                                 })();";

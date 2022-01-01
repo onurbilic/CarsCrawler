@@ -8,10 +8,11 @@ using CefSharp.OffScreen;
 using MassTransit;
 using MassTransit.ConsumeConfigurators;
 using MassTransit.Definition;
+using System.Collections;
 
 namespace CarsCrawler.Consumers.Consumer
 {
-    public class CarDetailConsumer : IConsumer
+    public class CarDetailConsumer : IConsumer<IVehicleDetailCommand>
     {
         private readonly IMongoRepository<VehicleDetail> _mongo;
         private readonly IBus _bus;
@@ -37,21 +38,7 @@ namespace CarsCrawler.Consumers.Consumer
         {
             AsyncContext.Run(async delegate
             {
-                var settings = new CefSettings()
-                {
-                    //By default CefSharp will use an in-memory cache, you need to specify a Cache Folder to persist data
-                    CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "CefSharp\\Cache1")
-                };
-
-                var success =
-                    await Cef.InitializeAsync(settings, performDependencyCheck: true, browserProcessHandler: null);
-
-                if (!success)
-                {
-                    throw new Exception("Unable to initialize CEF, check the log file.");
-                }
-
+              
                 var navigatedUrl = $@"{Consts.testUrl}vehicledetail/{vehicle.VehicleId}/";
                 using (var browser = new ChromiumWebBrowser(navigatedUrl))
                 {
@@ -66,14 +53,53 @@ namespace CarsCrawler.Consumers.Consumer
 
                     var vehicleDetail = await browser.EvaluateScriptAsync(
                         HtmlValueHelper.SetHtmlValue(string.Empty, string.Empty, HtmlSelector.getVehicleDetail));
+                    await Task.Delay(1000);
 
-                    VehicleDetail detail = new VehicleDetail
+                    if (vehicleDetail.Success)
                     {
+                        var result = vehicleDetail.Result;
+                        List<BasicInfoItem> basics = new List<BasicInfoItem>();
+                        foreach (dynamic item in (IEnumerable) ((dynamic)result).basicInfo)
+                        {
+                            var basicInfo = new BasicInfoItem()
+                            {
+                                key = item.key,
+                                value = item.value
+                            };
+                            basics.Add(basicInfo);
+                        }
 
-                    };
+                        List<FutureInfoItem> futures = new List<FutureInfoItem>();
+                        foreach (dynamic item in (IEnumerable)((dynamic)result).featuresInfo)
+                        {
+                            var futureInfo = new FutureInfoItem()
+                            {
+                                key = item.key,
+                                value = item.value
+                            };
+                            futures.Add(futureInfo);
+                        }
 
-                    await _mongo.InsertOneAsync(detail);
+                        VehicleDetail detail = new VehicleDetail
+                        {
+                            carId = vehicle.VehicleId,
+                            stockType = ((dynamic)result).stockType,
+                            title = ((dynamic)result).title,
+                            mileage = ((dynamic)result).mileage,
+                            price = ((dynamic)result).price,
+                            basicInfo = basics,
+                            futureInfo = futures,
+                            sellerName = ((dynamic)result).sellerName,
+                            dealerPhone = ((dynamic)result).dealerPhone,
+                            rating = ((dynamic)result).rating,
+                            dealerAddress = ((dynamic)result).dealerAddress,
+                            extLink = ((dynamic)result).extLink,
+                            sellerNotes = ((dynamic)result).sellerNotes,
 
+                        };
+
+                        await _mongo.InsertOneAsync(detail);
+                    }
                 }
 
             });
@@ -85,15 +111,7 @@ namespace CarsCrawler.Consumers.Consumer
     {
         public CarDetailConsumerDefinition()
         {
-            EndpointName = Consts.GetCaretailCommand;
-        }
-
-        protected override void ConfigureConsumer(IReceiveEndpointConfigurator endpointConfigurator,
-            IConsumerConfigurator<CarDetailConsumer> consumerConfigurator)
-        {
-            endpointConfigurator.ConfigureConsumeTopology = true;
-            //endpointConfigurator.ClearMessageDeserializers();
-            //endpointConfigurator.UseRawJsonSerializer();
+            EndpointName = Consts.GetCarDetailCommand;
         }
     }
 }

@@ -2,7 +2,7 @@ using MassTransit.Topology;
 
 namespace CarsCrawler.SharedBusiness.Commands
 {
-    [EntityName(Domain.Model.Consts.SearchCarsCommand)]
+    [EntityName(Domain.Model.Consts.GetCarDetailCommand)]
     public interface IVehicleDetailCommand
     {
         public string VehicleId { get; set; }

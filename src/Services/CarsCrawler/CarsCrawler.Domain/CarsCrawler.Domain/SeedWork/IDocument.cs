@@ -15,6 +15,7 @@ namespace CarsCrawler.Domain.SeedWork
 
         public abstract class Document : IDocument
         {
+            [BsonId]
             public ObjectId Id { get; set; }
 
             public DateTime CreatedAt => Id.CreationTime;

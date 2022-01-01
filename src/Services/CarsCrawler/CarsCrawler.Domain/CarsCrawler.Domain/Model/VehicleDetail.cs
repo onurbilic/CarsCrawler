@@ -16,8 +16,8 @@ namespace CarsCrawler.Domain.Model
         public string title { get; set; }
         public string mileage { get; set; }
         public string price { get; set; }
-        public BasicInfoItem basicInfo { get; set; }
-        public FutureInfoItem futureInfo { get; set; }
+        public List<BasicInfoItem> basicInfo { get; set; }
+        public List<FutureInfoItem> futureInfo { get; set; }
         public string sellerName { get; set; }
         public string dealerPhone { get; set; }
         public string rating { get; set; }
