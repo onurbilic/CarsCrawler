@@ -21,5 +21,6 @@ namespace CarsCrawler.Domain.Model
         public string reportLink { get; set; }
         public string dealerName { get; set; }
         public string rating { get; set; }
+        public int Status { get; set; }
     }
 }

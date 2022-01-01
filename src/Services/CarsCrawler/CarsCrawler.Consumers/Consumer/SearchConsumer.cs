@@ -122,16 +122,18 @@ namespace CarsCrawler.Consumers.Consumer
                                     carId = ((dynamic)item).id,
                                     dealerName = ((dynamic)item).dealerName,
                                     reportLink = ((dynamic)item).reportLink,
-                                    stockType = ((dynamic)item).stockType
+                                    stockType = ((dynamic)item).stockType,
+                                    Status = 1
 
                                 };
                                 vehicles.Add(vehicle);
-                                var endpoint = await _bus.GetSendEndpoint(new Uri("exchange:In.Carsdotcom.CarDetail"));
+                                //var endpoint = await _bus.GetSendEndpoint(new Uri("queue:In.Carsdotcom.CarDetail"));
 
-                                await endpoint.Send<IVehicleDetailCommand>(new
-                                {
-                                    VehicleId = vehicle.carId
-                                });
+
+                                //await endpoint.Send<IVehicleDetailCommand>(new
+                                //{
+                                //    VehicleId = vehicle.carId
+                                //});
                             }
                             
                             await _mongo.InsertManyAsync(vehicles);

@@ -9,6 +9,8 @@ using CarsCrawler.Infrastructure.Repositories.Mongo;
 using CarsCrawler.Infrastructure.Utils;
 using MassTransit;
 using Microsoft.Extensions.Options;
+using CarsCrawler.SharedBusiness.Commands;
+using RabbitMQ.Client;
 
 namespace CarsCrawler.Consumers
 {
@@ -65,6 +67,7 @@ namespace CarsCrawler.Consumers
                                     h.Username(rabbitSettings.GetSection("UserName").Value);
                                     h.Password(rabbitSettings.GetSection("Password").Value);
                                 });
+                                cfg.Publish<IVehicleDetailCommand>(e => e.ExchangeType = ExchangeType.Fanout);
 
                                 cfg.ConfigureEndpoints(context);
                             });
