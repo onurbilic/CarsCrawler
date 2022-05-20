@@ -6,6 +6,22 @@ networks:
 
 services:
   
+  setup:
+    build:
+      context: ELK_Docker/setup/
+      args:
+        ELASTIC_VERSION: 8.2.0
+    init: true
+    volumes:
+      - setup:/state:Z
+    environment:
+      ELASTIC_PASSWORD: "admin"
+      LOGSTASH_INTERNAL_PASSWORD: "admin"
+      KIBANA_SYSTEM_PASSWORD: "admin"
+    networks:
+      - carsnetwork
+  
+  
   mongo:
     image: mongo
     container_name: 'mongo'
@@ -74,8 +90,71 @@ services:
       - rabbitmq
     networks:
       - carsnetwork
+  
+  elasticsearch:
+    build:
+      context: ELK_Docker/elasticsearch/
+      args:
+        ELASTIC_VERSION: 8.2.0
+    volumes:
+      - ./ELK_Docker/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,z
+      - elasticsearch:/usr/share/elasticsearch/data:z
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      # Bootstrap password.
+      # Used to initialize the keystore during the initial startup of
+      # Elasticsearch. Ignored on subsequent runs.
+      ELASTIC_USERNAME: onur
+      ELASTIC_PASSWORD: admin
+      # Use single node discovery in order to disable production mode and avoid bootstrap checks.
+      # see: https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
+      discovery.type: single-node
+    networks:
+      - carsnetwork
+
+  logstash:
+    build:
+      context: ELK_Docker/logstash/
+      args:
+        ELASTIC_VERSION: 8.2.0
+    volumes:
+      - ./ELK_Docker/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
+      - ./ELK_Docker/logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
+    ports:
+      - "5044:5044"
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: -Xms256m -Xmx256m
+      LOGSTASH_INTERNAL_PASSWORD: admin
+    networks:
+      - carsnetwork
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    build:
+      context: ELK_Docker/kibana/
+      args:
+        ELASTIC_VERSION: 8.2.0
+    volumes:
+      - ./ELK_Docker/kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml:ro,Z
+    ports:
+      - "5601:5601"
+    environment:
+      KIBANA_SYSTEM_PASSWORD: admin
+    networks:
+      - carsnetwork
+    depends_on:
+      - elasticsearch
 
 volumes:
+  setup:
+  elasticsearch:
   redis_data:
     driver: local
 

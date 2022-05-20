@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure.csproj": {}
+    "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj": {
+    "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj",
+        "projectUniqueName": "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj",
         "projectName": "CarsCrawler.Domain",
-        "projectPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj",
-        "packagesPath": "C:\\Users\\onurb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\obj\\",
+        "projectPath": "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj",
+        "packagesPath": "/Users/obilic/.nuget/packages/",
+        "outputPath": "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\onurb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/obilic/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,36 +62,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure.csproj": {
+    "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure.csproj",
+        "projectUniqueName": "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure.csproj",
         "projectName": "CarsCrawler.Infrastructure",
-        "projectPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\onurb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Infrastructure\\CarsCrawler.Infrastructure\\obj\\",
+        "projectPath": "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure.csproj",
+        "packagesPath": "/Users/obilic/.nuget/packages/",
+        "outputPath": "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Infrastructure/CarsCrawler.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\onurb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/obilic/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj": {
-                "projectPath": "C:\\Users\\onurb\\Source\\Repos\\CarsCrawler\\src\\Services\\CarsCrawler\\CarsCrawler.Domain\\CarsCrawler.Domain\\CarsCrawler.Domain.csproj"
+              "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj": {
+                "projectPath": "/Users/obilic/Desktop/Workspace/CarsCrawler/src/Services/CarsCrawler/CarsCrawler.Domain/CarsCrawler.Domain/CarsCrawler.Domain.csproj"
               }
             }
           }
@@ -156,7 +152,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }
