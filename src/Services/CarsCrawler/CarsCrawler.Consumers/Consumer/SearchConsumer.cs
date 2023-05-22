@@ -53,7 +53,7 @@ namespace CarsCrawler.Consumers.Consumer
                     throw new Exception("Unable to initialize CEF, check the log file.");
                 }
 
-                using (var browser = new ChromiumWebBrowser(Consts.testUrl))
+                using (var browser = new ChromiumWebBrowser(Consts.TestUrl))
                 {
                     var initialLoadResponse = await browser.WaitForInitialLoadAsync();
 
@@ -87,12 +87,12 @@ namespace CarsCrawler.Consumers.Consumer
 
                     if (response.Success)
                     {
-                        for (int i = 0; i < search.PageCount; i++)
+                        for (var i = 0; i < search.PageCount; i++)
                         {
                             //you can also navigate page to click the page link at first page. But I want to prefer go with url navigation.
                             //TODO: Click on page link.
                             var navigatedPage = search.PageStart + i;
-                            var navigatedUrl = $@"{Consts.testUrl}shopping/results/?
+                            var navigatedUrl = $@"{Consts.TestUrl}shopping/results/?
                                                 page={navigatedPage.ToString()}&
                                                 page_size=20&
                                                 list_price_max={search.Price}&

@@ -39,7 +39,7 @@ namespace CarsCrawler.Consumers.Consumer
             AsyncContext.Run(async delegate
             {
               
-                var navigatedUrl = $@"{Consts.testUrl}vehicledetail/{vehicle.VehicleId}/";
+                var navigatedUrl = $@"{Consts.TestUrl}vehicledetail/{vehicle.VehicleId}/";
                 using (var browser = new ChromiumWebBrowser(navigatedUrl))
                 {
                     var initialLoadResponse = await browser.WaitForInitialLoadAsync();
@@ -80,7 +80,7 @@ namespace CarsCrawler.Consumers.Consumer
                             futures.Add(futureInfo);
                         }
 
-                        VehicleDetail detail = new VehicleDetail
+                        var detail = new VehicleDetail
                         {
                             carId = vehicle.VehicleId,
                             stockType = ((dynamic)result).stockType,
