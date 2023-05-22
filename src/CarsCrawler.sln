@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsCrawler.Consumers", "Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsCrawler.API", "Services\CarsCrawler\CarsCrawler.Api\CarsCrawler.API.csproj", "{926413D9-F2B9-4D16-AC5A-9FED433F0792}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UyapLoginTest", "Services\CarsCrawler\UyapLoginTest\UyapLoginTest.csproj", "{C8660BD0-679D-4CF6-90F8-3C1232BB94DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{926413D9-F2B9-4D16-AC5A-9FED433F0792}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{926413D9-F2B9-4D16-AC5A-9FED433F0792}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{926413D9-F2B9-4D16-AC5A-9FED433F0792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8660BD0-679D-4CF6-90F8-3C1232BB94DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8660BD0-679D-4CF6-90F8-3C1232BB94DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8660BD0-679D-4CF6-90F8-3C1232BB94DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8660BD0-679D-4CF6-90F8-3C1232BB94DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

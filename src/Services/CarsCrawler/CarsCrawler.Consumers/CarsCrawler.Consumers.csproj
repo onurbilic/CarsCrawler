@@ -16,7 +16,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="CefSharp.OffScreen.NETCore" Version="96.0.180" />
       <PackageReference Include="MassTransit" Version="7.2.2" />
       <PackageReference Include="MassTransit.AspNetCore" Version="7.2.2" />
       <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.2.2" />

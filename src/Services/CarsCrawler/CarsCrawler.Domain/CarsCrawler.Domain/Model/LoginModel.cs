@@ -4,7 +4,7 @@ namespace CarsCrawler.Domain.Model
     {
         // It should be on appsettings but in the test case I want to use hard coded.
         //TODO : set value login info from appsettings.json
-        public string UserName { get; set; } = "johngerson808@gmail.com";
-        public string Password { get; set; } = "test8008";
+        public string UserName { get; set; } = "12445277732";
+        public string Password { get; set; } = "13O02n18ur";
     }
 }

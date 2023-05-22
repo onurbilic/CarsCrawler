@@ -104,7 +104,6 @@ namespace CarsCrawler.Consumers.Consumer
 
             });
         }
-
     }
 
     public class CarDetailConsumerDefinition : ConsumerDefinition<CarDetailConsumer>

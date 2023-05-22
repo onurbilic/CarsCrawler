@@ -1,16 +1,16 @@
 using System.Diagnostics;
-using CarsCrawler.Domain.Model;
 using MassTransit;
 using MassTransit.ConsumeConfigurators;
 using MassTransit.Definition;
-using CarsCrawler.SharedBusiness.Commands;
-using CefSharp;
-using CefSharp.OffScreen;
 using CarsCrawler.Consumers.CefCrawler;
 using CarsCrawler.Infrastructure.Utils;
 using CarsCrawler.Infrastructure.Repositories.Mongo;
 using System.Collections;
+using CarsCrawler.Domain.Model;
 using CarsCrawler.SharedBusiness.CefSharp;
+using CarsCrawler.SharedBusiness.Commands;
+using CefSharp;
+using CefSharp.OffScreen;
 
 namespace CarsCrawler.Consumers.Consumer
 {
@@ -40,9 +40,7 @@ namespace CarsCrawler.Consumers.Consumer
             {
                 var settings = new CefSettings()
                 {
-                    //By default CefSharp will use an in-memory cache, you need to specify a Cache Folder to persist data
-                    CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "CefSharp\\Cache1")
+                    
                 };
 
                 var success =
