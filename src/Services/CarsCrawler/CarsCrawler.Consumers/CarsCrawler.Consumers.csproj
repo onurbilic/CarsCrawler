@@ -24,6 +24,7 @@
       <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="3.1.18" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+      <PackageReference Include="PuppeteerSharp" Version="10.0.0" />
       <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
     </ItemGroup>
 
